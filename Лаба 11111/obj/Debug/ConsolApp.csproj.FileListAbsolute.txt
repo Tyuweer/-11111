@@ -1,0 +1,21 @@
+C:\Users\kiril\source\repos\Лаба 11111\Лаба 11111\obj\Debug\ConsolApp.csproj.AssemblyReference.cache
+C:\Users\kiril\source\repos\Лаба 11111\Лаба 11111\obj\Debug\ConsolApp.csproj.CoreCompileInputs.cache
+C:\Users\kiril\source\repos\Лаба 11111\Лаба 11111\bin\Debug\Лаба 11111.exe.config
+C:\Users\kiril\source\repos\Лаба 11111\Лаба 11111\bin\Debug\Лаба 11111.exe
+C:\Users\kiril\source\repos\Лаба 11111\Лаба 11111\bin\Debug\Лаба 11111.pdb
+C:\Users\kiril\source\repos\Лаба 11111\Лаба 11111\bin\Debug\ModelLogic.dll
+C:\Users\kiril\source\repos\Лаба 11111\Лаба 11111\bin\Debug\ModelLogic.pdb
+C:\Users\kiril\source\repos\Лаба 11111\Лаба 11111\obj\Debug\ConsolApp.csproj.Up2Date
+C:\Users\kiril\source\repos\Лаба 11111\Лаба 11111\obj\Debug\Лаба 11111.exe
+C:\Users\kiril\source\repos\Лаба 11111\Лаба 11111\obj\Debug\Лаба 11111.pdb
+C:\Users\aleks\Desktop\Лаба 11111\Лаба 11111\bin\Debug\Лаба 11111.exe.config
+C:\Users\aleks\Desktop\Лаба 11111\Лаба 11111\bin\Debug\Лаба 11111.exe
+C:\Users\aleks\Desktop\Лаба 11111\Лаба 11111\bin\Debug\Лаба 11111.pdb
+C:\Users\aleks\Desktop\Лаба 11111\Лаба 11111\bin\Debug\ModelLogic.dll
+C:\Users\aleks\Desktop\Лаба 11111\Лаба 11111\bin\Debug\ModelLogic.pdb
+C:\Users\aleks\Desktop\Лаба 11111\Лаба 11111\obj\Debug\ConsolApp.csproj.AssemblyReference.cache
+C:\Users\aleks\Desktop\Лаба 11111\Лаба 11111\obj\Debug\Лаба 11111.exe.config
+C:\Users\aleks\Desktop\Лаба 11111\Лаба 11111\obj\Debug\ConsolApp.csproj.CoreCompileInputs.cache
+C:\Users\aleks\Desktop\Лаба 11111\Лаба 11111\obj\Debug\ConsolApp.csproj.Up2Date
+C:\Users\aleks\Desktop\Лаба 11111\Лаба 11111\obj\Debug\Лаба 11111.exe
+C:\Users\aleks\Desktop\Лаба 11111\Лаба 11111\obj\Debug\Лаба 11111.pdb
