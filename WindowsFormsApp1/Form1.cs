@@ -19,7 +19,25 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             RefreshList();
+            Label lblId = new Label();
+            lblId.Text = "ID";
+            lblId.AutoSize = true;
+            lblId.Location = new System.Drawing.Point(12, -2);
+            this.Controls.Add(lblId);
+
+            Label lblTitle = new Label();
+            lblTitle.Text = "Название";
+            lblTitle.AutoSize = true;
+            lblTitle.Location = new System.Drawing.Point(78, -2);
+            this.Controls.Add(lblTitle);
+
+            Label lblAuthor = new Label();
+            lblAuthor.Text = "Автор";
+            lblAuthor.AutoSize = true;
+            lblAuthor.Location = new System.Drawing.Point(234, -2);
+            this.Controls.Add(lblAuthor);
         }
+
 
         private void RefreshList()
         {
