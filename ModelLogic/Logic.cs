@@ -1,21 +1,34 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ModelLogic
 {
     public class Logic
     {
         private List<Book> books = new List<Book>();
-        private int nextId = 1;
+        private readonly string dataFilePath = "C:\\Users\\aleks\\Desktop\\FileSystemWatcher.txt";
+        
+        public Logic()
+        {
+            LoadBooks();
+        }
 
         public List<Book> GetAll() => books;
 
-        public void Add(string title, string author)
+        public bool Add(string title, string author)
         {
-            books.Add(new Book { Id = nextId++, Title = title, Author = author });
+            if (title != "" & author != "")
+            {
+                books.Add(new Book { Id = books.Count + 1, Title = title, Author = author });
+                SaveBooks();
+                Console.WriteLine("Книга успешно добавлена");
+                Console.WriteLine($"Id: {books.Count} | Название: {title} | Автор: {author}");
+                return true;
+            }
+            return false;
         }
 
         public bool Delete(int id)
@@ -23,9 +36,15 @@ namespace ModelLogic
             var book = books.FirstOrDefault(b => b.Id == id);
             if (book != null)
             {
+                string title = book.Title;
+                string author = book.Author;
                 books.Remove(book);
+                SaveBooks();
+                Console.WriteLine("Книга успешно удалена!");
+                Console.WriteLine($"Id: {id} | Название: {title} | Автор: {author}");
                 return true;
             }
+            Console.WriteLine("Книга, не удалена, возможно ошибка в ID");
             return false;
         }
 
@@ -36,15 +55,81 @@ namespace ModelLogic
             {
                 book.Title = newTitle;
                 book.Author = newAuthor;
+                SaveBooks();
+                Console.WriteLine("Книга успешно обновлена!");
+                Console.WriteLine($"Новое название: {newTitle} | Новый автор: {newAuthor}");
                 return true;
             }
+            Console.WriteLine("Не удалось обновить книгу, возможно ошибка в ID");
             return false;
         }
 
-        public List<Book> FindByAuthor(string author) =>
-            books.Where(b => b.Author == author).ToList();
+        public List<Book> FindByAuthor(string author)
+        {
+            var foundBooks = books.Where(b => b.Author == author).ToList();
+            if (!foundBooks.Any())
+            {
+                Console.WriteLine("У этого автора нет книг(");
+            }
+            return foundBooks;
+        }
 
-        public List<string> GroupByAuthor() =>
-            books.GroupBy(b => b.Author).Select(g => $"{g.Key}: {g.Count()} книг").ToList();
+        public List<string> GroupByAuthor()
+        {
+            return books.GroupBy(b => b.Author).Select(g => $"{g.Key}: {g.Count()} книг").ToList();
+        }
+
+        private void SaveBooks()
+        {
+            try
+            {
+                using (var writer = new StreamWriter(dataFilePath))
+                {
+                    foreach (var book in books)
+                    {
+                        writer.WriteLine($"{book.Id}|{book.Title}|{book.Author}");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Ошибка сохранения: {ex.Message}");
+            }
+        }
+
+        private void LoadBooks()
+        {
+            try
+            {
+                if (File.Exists(dataFilePath))
+                {
+                    books.Clear();
+                    var lines = File.ReadAllLines(dataFilePath);
+                    foreach (var line in lines)
+                    {
+                        if (string.IsNullOrWhiteSpace(line)) continue;
+
+                        var parts = line.Split('|');
+                        if (parts.Length == 3 && int.TryParse(parts[0], out int id))
+                        {
+                            books.Add(new Book
+                            {
+                                Id = id,
+                                Title = parts[1],
+                                Author = parts[2]
+                            });
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Игнорируем ошибки при загрузке
+            }
+        }
+        public string GetDataFilePath()
+        {
+            return dataFilePath;
+        }
     }
 }

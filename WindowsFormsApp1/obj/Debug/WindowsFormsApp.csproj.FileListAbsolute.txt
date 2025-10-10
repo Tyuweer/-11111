@@ -25,3 +25,17 @@ C:\Users\aleks\Desktop\Лаба 11111\WindowsFormsApp1\obj\Debug\WindowsFormsApp
 C:\Users\aleks\Desktop\Лаба 11111\WindowsFormsApp1\obj\Debug\WindowsF.5F5EF213.Up2Date
 C:\Users\aleks\Desktop\Лаба 11111\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\Users\aleks\Desktop\Лаба 11111\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\aleks\Desktop\project C#\Лаба 11111\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\aleks\Desktop\project C#\Лаба 11111\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\aleks\Desktop\project C#\Лаба 11111\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\aleks\Desktop\project C#\Лаба 11111\WindowsFormsApp1\bin\Debug\ModelLogic.dll
+C:\Users\aleks\Desktop\project C#\Лаба 11111\WindowsFormsApp1\bin\Debug\ModelLogic.pdb
+C:\Users\aleks\Desktop\project C#\Лаба 11111\WindowsFormsApp1\obj\Debug\WindowsFormsApp.csproj.AssemblyReference.cache
+C:\Users\aleks\Desktop\project C#\Лаба 11111\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe.config
+C:\Users\aleks\Desktop\project C#\Лаба 11111\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\aleks\Desktop\project C#\Лаба 11111\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\aleks\Desktop\project C#\Лаба 11111\WindowsFormsApp1\obj\Debug\WindowsFormsApp.csproj.GenerateResource.cache
+C:\Users\aleks\Desktop\project C#\Лаба 11111\WindowsFormsApp1\obj\Debug\WindowsFormsApp.csproj.CoreCompileInputs.cache
+C:\Users\aleks\Desktop\project C#\Лаба 11111\WindowsFormsApp1\obj\Debug\WindowsF.5F5EF213.Up2Date
+C:\Users\aleks\Desktop\project C#\Лаба 11111\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\aleks\Desktop\project C#\Лаба 11111\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb

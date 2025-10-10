@@ -5,16 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using ModelLogic;
 
+
 namespace Лаба_11111
 {
-    class Program
+    class ConsoleApp
     {
         static void Main()
         {
             var logic = new Logic();
             while (true)
             {
-                Console.WriteLine("\n1. Добавить книгу\n2. Удалить книгу\n3. Обновить книгу\n4. Показать все\n5. Найти по автору\n6. Группировать\n0. Выход");
+                Console.WriteLine("\n1. Добавить книгу\n2. Удалить книгу\n3. Обновить книгу\n4. Показать все\n5. Найти по автору\n6. Группировать по каждому автору\n0. Выход");
                 var choice = Console.ReadLine();
                 switch (choice)
                 {
@@ -23,7 +24,15 @@ namespace Лаба_11111
                         var title = Console.ReadLine();
                         Console.Write("Автор: ");
                         var author = Console.ReadLine();
-                        logic.Add(title, author);
+                        if (title != "" & author != "")
+                        {
+                            logic.Add(title, author);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Название и автор должны быть указаны!");
+                        }
+                            
                         break;
                     case "2":
                         Console.Write("ID: ");
@@ -41,13 +50,15 @@ namespace Лаба_11111
                         break;
                     case "4":
                         foreach (var b in logic.GetAll())
-                            Console.WriteLine($"{b.Id}: {b.Title} - {b.Author}");
+                            Console.WriteLine($"ID: {b.Id} | Название: {b.Title} | Автор: {b.Author}");
                         break;
                     case "5":
                         Console.Write("Автор: ");
                         var findAuthor = Console.ReadLine();
+                        Console.WriteLine($"Книги автора: {findAuthor}");
                         foreach (var b in logic.FindByAuthor(findAuthor))
-                            Console.WriteLine($"{b.Id}: {b.Title}");
+                         
+                            Console.WriteLine($"ID: {b.Id} | Название: {b.Title}");
                         break;
                     case "6":
                         foreach (var g in logic.GroupByAuthor())

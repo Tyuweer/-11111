@@ -10,3 +10,19 @@ C:\Users\aleks\Desktop\Лаба 11111\ModelLogic\obj\Debug\ModelLogic.csproj.Ass
 C:\Users\aleks\Desktop\Лаба 11111\ModelLogic\obj\Debug\ModelLogic.csproj.CoreCompileInputs.cache
 C:\Users\aleks\Desktop\Лаба 11111\ModelLogic\obj\Debug\ModelLogic.dll
 C:\Users\aleks\Desktop\Лаба 11111\ModelLogic\obj\Debug\ModelLogic.pdb
+C:\Users\aleks\Desktop\project C#\Лаба 11111\ModelLogic\bin\Debug\ModelLogic.dll
+C:\Users\aleks\Desktop\project C#\Лаба 11111\ModelLogic\bin\Debug\ModelLogic.pdb
+C:\Users\aleks\Desktop\project C#\Лаба 11111\ModelLogic\obj\Debug\ModelLogic.csproj.AssemblyReference.cache
+C:\Users\aleks\Desktop\project C#\Лаба 11111\ModelLogic\obj\Debug\ModelLogic.csproj.CoreCompileInputs.cache
+C:\Users\aleks\Desktop\project C#\Лаба 11111\ModelLogic\obj\Debug\ModelLogic.dll
+C:\Users\aleks\Desktop\project C#\Лаба 11111\ModelLogic\obj\Debug\ModelLogic.pdb
+C:\Users\aleks\Desktop\project C#\Лаба 11111\ModelLogic\bin\Debug\System.Memory.dll
+C:\Users\aleks\Desktop\project C#\Лаба 11111\ModelLogic\bin\Debug\System.Text.Json.dll
+C:\Users\aleks\Desktop\project C#\Лаба 11111\ModelLogic\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\aleks\Desktop\project C#\Лаба 11111\ModelLogic\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\aleks\Desktop\project C#\Лаба 11111\ModelLogic\bin\Debug\System.Buffers.dll
+C:\Users\aleks\Desktop\project C#\Лаба 11111\ModelLogic\bin\Debug\System.IO.Pipelines.dll
+C:\Users\aleks\Desktop\project C#\Лаба 11111\ModelLogic\bin\Debug\System.ValueTuple.dll
+C:\Users\aleks\Desktop\project C#\Лаба 11111\ModelLogic\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\aleks\Desktop\project C#\Лаба 11111\ModelLogic\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\aleks\Desktop\project C#\Лаба 11111\ModelLogic\obj\Debug\ModelLogic.csproj.Up2Date

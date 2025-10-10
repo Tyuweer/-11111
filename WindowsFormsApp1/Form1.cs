@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,43 +16,64 @@ namespace WindowsFormsApp1
     {
         private Logic logic = new Logic();
 
+        private FileSystemWatcher fileWatcher;
         public Form1()
         {
             InitializeComponent();
             RefreshList();
-            Label lblId = new Label();
-            lblId.Text = "ID";
-            lblId.AutoSize = true;
-            lblId.Location = new System.Drawing.Point(12, -2);
-            this.Controls.Add(lblId);
 
-            Label lblTitle = new Label();
-            lblTitle.Text = "Название";
-            lblTitle.AutoSize = true;
-            lblTitle.Location = new System.Drawing.Point(78, -2);
-            this.Controls.Add(lblTitle);
-
-            Label lblAuthor = new Label();
-            lblAuthor.Text = "Автор";
-            lblAuthor.AutoSize = true;
-            lblAuthor.Location = new System.Drawing.Point(234, -2);
-            this.Controls.Add(lblAuthor);
+            fileWatcher = new FileSystemWatcher();
+            fileWatcher.Path = Path.GetDirectoryName(logic.GetDataFilePath());
+            fileWatcher.Filter = Path.GetFileName(logic.GetDataFilePath());
+            fileWatcher.NotifyFilter = NotifyFilters.LastWrite;
+            fileWatcher.Changed += OnFileChanged;
+        }
+        //Добавил метод
+        private void OnFileChanged(object sender, FileSystemEventArgs e)
+        {
+            if (this.InvokeRequired)
+            {
+                this.Invoke(new Action(() =>
+                {
+                    RefreshList();
+                }));
+            }
+            else
+            {
+                RefreshList();
+            }
         }
 
-
+        /// <summary>
+        /// Обновляет содержимое списка книг
+        /// </summary
         private void RefreshList()
         {
             listBoxBooks.Items.Clear();
             foreach (var book in logic.GetAll())
                 listBoxBooks.Items.Add($"{book.Id}: {book.Title} - {book.Author}");
         }
-
+        /// <summary>
+        /// Обработчик кнопки добавления новой книги
+        /// </summary>
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            logic.Add(txtTitle.Text, txtAuthor.Text);
-            RefreshList();
-        }
+            if(logic.Add(txtTitle.Text, txtAuthor.Text))
+            {
+                RefreshList();
+                txtAuthor.Text = null;
+                txtTitle.Text = null;
+            }
+            else
+            {
+                MessageBox.Show("Заполните поле название и поле автор!");
+            }
+                
 
+        }
+        /// <summary>
+        /// Обработчик кнопки удаления выбранной книги
+        /// </summary>
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (listBoxBooks.SelectedItem == null)
@@ -67,14 +89,20 @@ namespace WindowsFormsApp1
             logic.Delete(id); // Удаляем по ID
             RefreshList();    // Обновляем список
         }
-
+        /// <summary>
+        /// Обработчик кнопки обновления данных книги
+        /// </summary>
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (int.TryParse(txtId.Text, out int id))
-                logic.Update(id, txtTitle.Text, txtAuthor.Text);
+            foreach (var book in logic.GetAll())
+            {
+                logic.Update(book.Id, book.Title, book.Author);
+            }
             RefreshList();
         }
-
+        /// <summary>
+        /// Обработчик кнопки группировки книг по авторам
+        /// </summary
         private void btnGroup_Click(object sender, EventArgs e)
         {
             listBoxBooks.Items.Clear();
