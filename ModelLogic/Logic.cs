@@ -81,50 +81,35 @@ namespace ModelLogic
 
         private void SaveBooks()
         {
-            try
+            using (var writer = new StreamWriter(dataFilePath))
             {
-                using (var writer = new StreamWriter(dataFilePath))
+                foreach (var book in books)
                 {
-                    foreach (var book in books)
-                    {
-                        writer.WriteLine($"{book.Id}|{book.Title}|{book.Author}");
-                    }
+                    writer.WriteLine($"{book.Id}|{book.Title}|{book.Author}");
                 }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception($"Ошибка сохранения: {ex.Message}");
             }
         }
 
         private void LoadBooks()
         {
-            try
+            if (File.Exists(dataFilePath))
             {
-                if (File.Exists(dataFilePath))
+                books.Clear();
+                var lines = File.ReadAllLines(dataFilePath);
+                foreach (var line in lines)
                 {
-                    books.Clear();
-                    var lines = File.ReadAllLines(dataFilePath);
-                    foreach (var line in lines)
+                    if (string.IsNullOrWhiteSpace(line)) continue;
+                    var parts = line.Split('|');
+                    if (parts.Length == 3 && int.TryParse(parts[0], out int id))
                     {
-                        if (string.IsNullOrWhiteSpace(line)) continue;
-
-                        var parts = line.Split('|');
-                        if (parts.Length == 3 && int.TryParse(parts[0], out int id))
+                        books.Add(new Book
                         {
-                            books.Add(new Book
-                            {
-                                Id = id,
-                                Title = parts[1],
-                                Author = parts[2]
-                            });
-                        }
+                            Id = id,
+                            Title = parts[1],
+                            Author = parts[2]
+                        });
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                // Игнорируем ошибки при загрузке
             }
         }
         public string GetDataFilePath()

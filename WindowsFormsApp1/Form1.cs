@@ -26,22 +26,7 @@ namespace WindowsFormsApp1
             fileWatcher.Path = Path.GetDirectoryName(logic.GetDataFilePath());
             fileWatcher.Filter = Path.GetFileName(logic.GetDataFilePath());
             fileWatcher.NotifyFilter = NotifyFilters.LastWrite;
-            fileWatcher.Changed += OnFileChanged;
-        }
-        //Добавил метод
-        private void OnFileChanged(object sender, FileSystemEventArgs e)
-        {
-            if (this.InvokeRequired)
-            {
-                this.Invoke(new Action(() =>
-                {
-                    RefreshList();
-                }));
-            }
-            else
-            {
-                RefreshList();
-            }
+            fileWatcher.Changed += (sender, e) => RefreshList();
         }
 
         /// <summary>
