@@ -1,31 +1,33 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.Collections.Generic;
 using System.Linq;
+using DomainModels;
+using DataAccessLayer;
 
 namespace ModelLogic
 {
     public class Logic
     {
-        private List<Book> books = new List<Book>();
-        private readonly string dataFilePath = "C:\\Users\\aleks\\Desktop\\FileSystemWatcher.txt";
-        
-        public Logic()
+        private readonly IRepository<Book> _repository;
+
+        // Конструктор с возможностью выбора реализации репозитория
+        public Logic(bool useDapper = false)
         {
-            LoadBooks();
+            if (useDapper)
+                _repository = new DapperRepository<Book>();
+            else
+                _repository = new EntityRepository<Book>();
         }
 
-        public List<Book> GetAll() => books;
+        // Для обратной совместимости - используем EF по умолчанию
+        public Logic() : this(false) { }
+
+        public List<Book> GetAll() => _repository.ReadAll().ToList();
 
         public bool Add(string title, string author)
         {
-            if (title != "" & author != "")
+            if (!string.IsNullOrWhiteSpace(title) && !string.IsNullOrWhiteSpace(author))
             {
-                books.Add(new Book { Id = books.Count + 1, Title = title, Author = author });
-                SaveBooks();
-                Console.WriteLine("Книга успешно добавлена");
-                Console.WriteLine($"Id: {books.Count} | Название: {title} | Автор: {author}");
+                _repository.Add(new Book { Title = title, Author = author });
                 return true;
             }
             return false;
@@ -33,88 +35,46 @@ namespace ModelLogic
 
         public bool Delete(int id)
         {
-            var book = books.FirstOrDefault(b => b.Id == id);
+            var book = _repository.ReadById(id);
             if (book != null)
             {
-                string title = book.Title;
-                string author = book.Author;
-                books.Remove(book);
-                SaveBooks();
-                Console.WriteLine("Книга успешно удалена!");
-                Console.WriteLine($"Id: {id} | Название: {title} | Автор: {author}");
+                _repository.Delete(id);
                 return true;
             }
-            Console.WriteLine("Книга, не удалена, возможно ошибка в ID");
             return false;
         }
 
         public bool Update(int id, string newTitle, string newAuthor)
         {
-            var book = books.FirstOrDefault(b => b.Id == id);
-            if (book != null)
+            var book = _repository.ReadById(id);
+            if (book != null && !string.IsNullOrWhiteSpace(newTitle) && !string.IsNullOrWhiteSpace(newAuthor))
             {
                 book.Title = newTitle;
                 book.Author = newAuthor;
-                SaveBooks();
-                Console.WriteLine("Книга успешно обновлена!");
-                Console.WriteLine($"Новое название: {newTitle} | Новый автор: {newAuthor}");
+                _repository.Update(book);
                 return true;
             }
-            Console.WriteLine("Не удалось обновить книгу, возможно ошибка в ID");
             return false;
         }
 
         public List<Book> FindByAuthor(string author)
         {
-            var foundBooks = books.Where(b => b.Author == author).ToList();
-            if (!foundBooks.Any())
-            {
-                Console.WriteLine("У этого автора нет книг(");
-            }
-            return foundBooks;
+            return _repository.ReadAll()
+                .Where(b => b.Author == author)
+                .ToList();
         }
 
         public List<string> GroupByAuthor()
         {
-            return books.GroupBy(b => b.Author).Select(g => $"{g.Key}: {g.Count()} книг").ToList();
+            return _repository.ReadAll()
+                .GroupBy(b => b.Author)
+                .Select(g => $"{g.Key}: {g.Count()} книг")
+                .ToList();
         }
 
-        private void SaveBooks()
-        {
-            using (var writer = new StreamWriter(dataFilePath))
-            {
-                foreach (var book in books)
-                {
-                    writer.WriteLine($"{book.Id}|{book.Title}|{book.Author}");
-                }
-            }
-        }
-
-        private void LoadBooks()
-        {
-            if (File.Exists(dataFilePath))
-            {
-                books.Clear();
-                var lines = File.ReadAllLines(dataFilePath);
-                foreach (var line in lines)
-                {
-                    if (string.IsNullOrWhiteSpace(line)) continue;
-                    var parts = line.Split('|');
-                    if (parts.Length == 3 && int.TryParse(parts[0], out int id))
-                    {
-                        books.Add(new Book
-                        {
-                            Id = id,
-                            Title = parts[1],
-                            Author = parts[2]
-                        });
-                    }
-                }
-            }
-        }
         public string GetDataFilePath()
         {
-            return dataFilePath;
+            return "База данных SQL Server (LocalDB)";
         }
     }
 }

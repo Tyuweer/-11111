@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp", "WindowsF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelLogic", "ModelLogic\ModelLogic.csproj", "{8DBDFF13-4D31-4D24-A850-08C43AA9F024}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainModels", "DomainModels\DomainModels.csproj", "{6C395025-A105-4A83-A988-EA391A441D17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{013BF96A-3413-46D9-B2D1-4BB7BD94D891}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{8DBDFF13-4D31-4D24-A850-08C43AA9F024}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8DBDFF13-4D31-4D24-A850-08C43AA9F024}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8DBDFF13-4D31-4D24-A850-08C43AA9F024}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C395025-A105-4A83-A988-EA391A441D17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C395025-A105-4A83-A988-EA391A441D17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C395025-A105-4A83-A988-EA391A441D17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C395025-A105-4A83-A988-EA391A441D17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{013BF96A-3413-46D9-B2D1-4BB7BD94D891}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{013BF96A-3413-46D9-B2D1-4BB7BD94D891}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{013BF96A-3413-46D9-B2D1-4BB7BD94D891}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{013BF96A-3413-46D9-B2D1-4BB7BD94D891}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

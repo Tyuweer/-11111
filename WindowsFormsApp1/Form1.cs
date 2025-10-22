@@ -1,4 +1,6 @@
-﻿using ModelLogic;
+﻿using DataAccessLayer;
+using DomainModels;
+using ModelLogic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,13 +22,10 @@ namespace WindowsFormsApp1
         public Form1()
         {
             InitializeComponent();
-            RefreshList();
 
-            fileWatcher = new FileSystemWatcher();
-            fileWatcher.Path = Path.GetDirectoryName(logic.GetDataFilePath());
-            fileWatcher.Filter = Path.GetFileName(logic.GetDataFilePath());
-            fileWatcher.NotifyFilter = NotifyFilters.LastWrite;
-            fileWatcher.Changed += (sender, e) => RefreshList();
+            var testRepo = new EntityRepository<Book>();
+
+            RefreshList();
         }
 
         /// <summary>

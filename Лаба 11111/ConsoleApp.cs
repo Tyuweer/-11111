@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ModelLogic;
-
+using DomainModels;
+using DataAccessLayer;
 
 namespace Лаба_11111
 {
@@ -12,7 +13,18 @@ namespace Лаба_11111
     {
         static void Main()
         {
+            // Простая инициализация БД через создание репозитория
+            try
+            {
+                var testRepo = new EntityRepository<Book>();
+                Console.WriteLine("База данных инициализирована");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Ошибка инициализации БД: {ex.Message}");
+            }
             var logic = new Logic();
+
             while (true)
             {
                 Console.WriteLine("\n1. Добавить книгу\n2. Удалить книгу\n3. Обновить книгу\n4. Показать все\n5. Найти по автору\n6. Группировать по каждому автору\n0. Выход");

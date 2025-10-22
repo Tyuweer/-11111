@@ -30,3 +30,20 @@ C:\Users\aleks\Desktop\project C#\Лаба 11111\Лаба 11111\obj\Debug\Consol
 C:\Users\aleks\Desktop\project C#\Лаба 11111\Лаба 11111\obj\Debug\ConsolApp.csproj.Up2Date
 C:\Users\aleks\Desktop\project C#\Лаба 11111\Лаба 11111\obj\Debug\Лаба 11111.exe
 C:\Users\aleks\Desktop\project C#\Лаба 11111\Лаба 11111\obj\Debug\Лаба 11111.pdb
+C:\Users\aleks\Desktop\project C#\Лаба 11111\Лаба 11111\bin\Debug\DataAccessLayer.dll
+C:\Users\aleks\Desktop\project C#\Лаба 11111\Лаба 11111\bin\Debug\DomainModels.dll
+C:\Users\aleks\Desktop\project C#\Лаба 11111\Лаба 11111\bin\Debug\EntityFramework.dll
+C:\Users\aleks\Desktop\project C#\Лаба 11111\Лаба 11111\bin\Debug\Dapper.dll
+C:\Users\aleks\Desktop\project C#\Лаба 11111\Лаба 11111\bin\Debug\DataAccessLayer.pdb
+C:\Users\aleks\Desktop\project C#\Лаба 11111\Лаба 11111\bin\Debug\DomainModels.pdb
+C:\Users\aleks\Desktop\project C#\Лаба 11111\Лаба 11111\bin\Debug\EntityFramework.xml
+C:\Users\aleks\Desktop\project C#\Лаба 11111\Лаба 11111\bin\Debug\Dapper.pdb
+C:\Users\aleks\Desktop\project C#\Лаба 11111\Лаба 11111\bin\Debug\Dapper.xml
+C:\Users\aleks\Desktop\project C#\Лаба 11111\Лаба 11111\bin\Debug\ModelLogic.dll.config
+C:\Users\aleks\Desktop\project C#\Лаба 11111\Лаба 11111\bin\Debug\BookLibrary.mdf
+C:\Users\aleks\Desktop\project C#\Лаба 11111\Лаба 11111\bin\Debug\BookLibrary_log.ldf
+C:\Users\aleks\Desktop\project C#\Лаба 11111\Лаба 11111\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\aleks\Desktop\project C#\Лаба 11111\Лаба 11111\bin\Debug\EntityFramework.SqlServerCompact.dll
+C:\Users\aleks\Desktop\project C#\Лаба 11111\Лаба 11111\bin\Debug\System.Data.SqlServerCe.dll
+C:\Users\aleks\Desktop\project C#\Лаба 11111\Лаба 11111\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\aleks\Desktop\project C#\Лаба 11111\Лаба 11111\bin\Debug\EntityFramework.SqlServerCompact.xml

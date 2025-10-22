@@ -26,3 +26,13 @@ C:\Users\aleks\Desktop\project C#\Лаба 11111\ModelLogic\bin\Debug\System.Val
 C:\Users\aleks\Desktop\project C#\Лаба 11111\ModelLogic\bin\Debug\System.Text.Encodings.Web.dll
 C:\Users\aleks\Desktop\project C#\Лаба 11111\ModelLogic\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\aleks\Desktop\project C#\Лаба 11111\ModelLogic\obj\Debug\ModelLogic.csproj.Up2Date
+C:\Users\aleks\Desktop\project C#\Лаба 11111\ModelLogic\bin\Debug\DataAccessLayer.dll
+C:\Users\aleks\Desktop\project C#\Лаба 11111\ModelLogic\bin\Debug\DomainModels.dll
+C:\Users\aleks\Desktop\project C#\Лаба 11111\ModelLogic\bin\Debug\EntityFramework.dll
+C:\Users\aleks\Desktop\project C#\Лаба 11111\ModelLogic\bin\Debug\Dapper.dll
+C:\Users\aleks\Desktop\project C#\Лаба 11111\ModelLogic\bin\Debug\DataAccessLayer.pdb
+C:\Users\aleks\Desktop\project C#\Лаба 11111\ModelLogic\bin\Debug\DomainModels.pdb
+C:\Users\aleks\Desktop\project C#\Лаба 11111\ModelLogic\bin\Debug\EntityFramework.xml
+C:\Users\aleks\Desktop\project C#\Лаба 11111\ModelLogic\bin\Debug\Dapper.pdb
+C:\Users\aleks\Desktop\project C#\Лаба 11111\ModelLogic\bin\Debug\Dapper.xml
+C:\Users\aleks\Desktop\project C#\Лаба 11111\ModelLogic\bin\Debug\ModelLogic.dll.config
