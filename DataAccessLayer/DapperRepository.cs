@@ -3,7 +3,6 @@ using System.Data.SqlClient;
 using System.Linq;
 using Dapper;
 using DomainModels;
-using System.Configuration;
 
 namespace DataAccessLayer
 {
@@ -13,14 +12,10 @@ namespace DataAccessLayer
 
         public DapperRepository()
         {
-            _connectionString = ConfigurationManager.ConnectionStrings["BookDbConnection"]?.ConnectionString;
-
-            if (string.IsNullOrEmpty(_connectionString))
-            {
-                throw new System.Exception("Строка подключения 'BookDbConnection' не найдена в конфигурации");
-            }
+            _connectionString = DatabaseConfig.ConnectionString;
         }
 
+        // Все остальные методы остаются БЕЗ ИЗМЕНЕНИЙ
         public void Add(T item)
         {
             using (var connection = new SqlConnection(_connectionString))
@@ -56,8 +51,6 @@ namespace DataAccessLayer
             {
                 connection.Open();
                 string sql = "SELECT * FROM Books WHERE Id = @Id";
-
-                // Используем альтернативный метод если QueryFirstOrDefault не работает
                 return connection.Query<T>(sql, new { Id = id }).FirstOrDefault();
             }
         }

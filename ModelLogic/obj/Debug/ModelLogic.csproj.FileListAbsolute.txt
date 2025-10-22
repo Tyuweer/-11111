@@ -36,3 +36,5 @@ C:\Users\aleks\Desktop\project C#\Лаба 11111\ModelLogic\bin\Debug\EntityFram
 C:\Users\aleks\Desktop\project C#\Лаба 11111\ModelLogic\bin\Debug\Dapper.pdb
 C:\Users\aleks\Desktop\project C#\Лаба 11111\ModelLogic\bin\Debug\Dapper.xml
 C:\Users\aleks\Desktop\project C#\Лаба 11111\ModelLogic\bin\Debug\ModelLogic.dll.config
+C:\Users\aleks\Desktop\project C#\Лаба 11111\ModelLogic\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\aleks\Desktop\project C#\Лаба 11111\ModelLogic\bin\Debug\EntityFramework.SqlServer.xml

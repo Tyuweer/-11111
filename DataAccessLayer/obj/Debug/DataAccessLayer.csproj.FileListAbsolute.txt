@@ -17,5 +17,3 @@ C:\Users\aleks\Desktop\project C#\Лаба 11111\DataAccessLayer\obj\Debug\DataA
 C:\Users\aleks\Desktop\project C#\Лаба 11111\DataAccessLayer\obj\Debug\DataAcce.E67BD773.Up2Date
 C:\Users\aleks\Desktop\project C#\Лаба 11111\DataAccessLayer\obj\Debug\DataAccessLayer.dll
 C:\Users\aleks\Desktop\project C#\Лаба 11111\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
-C:\Users\aleks\Desktop\project C#\Лаба 11111\DataAccessLayer\bin\Debug\System.Configuration.ConfigurationManager.dll
-C:\Users\aleks\Desktop\project C#\Лаба 11111\DataAccessLayer\bin\Debug\System.Configuration.ConfigurationManager.xml
