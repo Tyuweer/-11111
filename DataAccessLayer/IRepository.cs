@@ -3,6 +3,7 @@ using DomainModels;
 
 namespace DataAccessLayer
 {
+    // реализация IDomainObject
     public interface IRepository<T> where T : IDomainObject
     {
         void Add(T item);

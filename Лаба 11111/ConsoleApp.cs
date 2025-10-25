@@ -17,13 +17,12 @@ namespace Лаба_11111
             try
             {
                 var testRepo = new EntityRepository<Book>();
-                Console.WriteLine("База данных инициализирована");
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Ошибка инициализации БД: {ex.Message}");
             }
-            var logic = new Logic();
+            var logic = new Logic(true);
 
             while (true)
             {

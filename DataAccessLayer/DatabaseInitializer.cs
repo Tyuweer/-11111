@@ -3,6 +3,7 @@ using DomainModels;
 
 namespace DataAccessLayer
 {
+    // проверка есть ли БД, если нет создаем новую
     public class DatabaseInitializer : CreateDatabaseIfNotExists<AppDbContext>
     {
         protected override void Seed(AppDbContext context)

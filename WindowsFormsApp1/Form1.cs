@@ -18,7 +18,6 @@ namespace WindowsFormsApp1
     {
         private Logic logic = new Logic();
 
-        private FileSystemWatcher fileWatcher;
         public Form1()
         {
             InitializeComponent();
@@ -28,7 +27,7 @@ namespace WindowsFormsApp1
             RefreshList();
         }
 
-        /// <summary>
+        /// <summary>   
         /// Обновляет содержимое списка книг
         /// </summary
         private void RefreshList()

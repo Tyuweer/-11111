@@ -6,6 +6,7 @@ using DomainModels;
 
 namespace DataAccessLayer
 {
+    // Реализуем generic интерфейс, Ограничение: T должен быть классом (не структурой), Ограничение: T должен реализовывать интерфейс IDomainObject
     public class DapperRepository<T> : IRepository<T> where T : class, IDomainObject
     {
         private readonly string _connectionString;
@@ -15,15 +16,26 @@ namespace DataAccessLayer
             _connectionString = DatabaseConfig.ConnectionString;
         }
 
-        // Все остальные методы остаются БЕЗ ИЗМЕНЕНИЙ
         public void Add(T item)
         {
+            // Создается объект подключения к БД
             using (var connection = new SqlConnection(_connectionString))
             {
+                // Установка физического соединения с SQL Server
                 connection.Open();
+                //INSERT INTO Books - вставить в таблицу Books
+
+                //(Title, Author) - перечисляем столбцы для заполнения
+
+                //VALUES(@Title, @Author) - значения для вставки
                 string sql = "INSERT INTO Books (Title, Author) VALUES (@Title, @Author)";
+                // Для использования Dapper, Dapper смотрит на все свойства объекта, автоматически создает параметры
+                // sql Server выполняет запрос и атоматически генерирует ID
                 connection.Execute(sql, item);
             }
+            //using нужен для гарантирует, что подключение к БД будет закрыто в любом случае -
+            // даже если произойдет ошибка во время выполнения запроса.
+            // после закрытия блока using вызывается Process Dispose(): Он закрывает подключение к БД
         }
 
         public void Delete(int id)
@@ -41,6 +53,10 @@ namespace DataAccessLayer
             using (var connection = new SqlConnection(_connectionString))
             {
                 connection.Open();
+                // Возвращает результат в виде таблицы с помощью Sql запроса
+                // Dapper автоматически сопоставляет столбцы с свойствами класса
+                // Типизация через Generic <T>, Dapper создает объекты типа Book
+                // Возвращается List<Book> - конкретная коллекция
                 return connection.Query<T>("SELECT * FROM Books").ToList();
             }
         }
@@ -51,7 +67,11 @@ namespace DataAccessLayer
             {
                 connection.Open();
                 string sql = "SELECT * FROM Books WHERE Id = @Id";
+                // Dapper автоматически преобразует в @Id = id
+                // Query<T> возвращает IEnumerable<T> 
+                // FirstOrDefault() берет первый элемент или null
                 return connection.Query<T>(sql, new { Id = id }).FirstOrDefault();
+                // если не найдется книга по id ничего не произойдет (return null)
             }
         }
 

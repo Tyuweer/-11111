@@ -25,6 +25,9 @@ namespace ModelLogic
 
         public bool Add(string title, string author)
         {
+            //String.IsNullOrWhiteSpace() — это метод в C#,
+            //который проверяет, является ли строка null, пустой ("") или содержит только пробельные символы 
+            //Если одно из этих условий верно, метод возвращает true, в противном случае — false
             if (!string.IsNullOrWhiteSpace(title) && !string.IsNullOrWhiteSpace(author))
             {
                 _repository.Add(new Book { Title = title, Author = author });
@@ -70,11 +73,6 @@ namespace ModelLogic
                 .GroupBy(b => b.Author)
                 .Select(g => $"{g.Key}: {g.Count()} книг")
                 .ToList();
-        }
-
-        public string GetDataFilePath()
-        {
-            return "База данных SQL Server (LocalDB)";
         }
     }
 }
