@@ -16,10 +16,11 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
-        private readonly Logic logic = new Logic();
-        public Form1()
+        private readonly Logic _logic;
+        public Form1(Logic logic)
         {
             InitializeComponent();
+            _logic = logic;
             SetupDataGridView();
             RefreshDataGrid();
         }
@@ -54,7 +55,7 @@ namespace WindowsFormsApp1
             // Удаляем все элементы
             dataGridViewBooks.Rows.Clear();
 
-            var data = books ?? logic.GetAll();
+            var data = books ?? _logic.GetAll();
 
             foreach (var book in data)
             {
@@ -67,7 +68,7 @@ namespace WindowsFormsApp1
         /// </summary>
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            if (logic.Add(txtTitle.Text, txtAuthor.Text))
+            if (_logic.Add(txtTitle.Text, txtAuthor.Text))
             {
                 RefreshDataGrid();
                 txtAuthor.Text = null;
@@ -95,23 +96,101 @@ namespace WindowsFormsApp1
             foreach (DataGridViewRow row in dataGridViewBooks.SelectedRows)
             {
                 int id = (int)row.Cells["Id"].Value;
-                logic.Delete(id);
+                _logic.Delete(id);
             }
 
             RefreshDataGrid();
         }
-
         /// <summary>
         /// Обработчик кнопки обновления данных книги
         /// </summary>
         private void BtnUpdate_Click(object sender, EventArgs e)
         {
-            foreach (var book in logic.GetAll())
+            // Проверяем, что выбрана ровно одна книга
+            if (dataGridViewBooks.SelectedRows.Count != 1)
             {
-                logic.Update(book.Id, book.Title, book.Author);
+                MessageBox.Show("Выберите одну книгу для редактирования.", "Информация",
+                               MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                return;
             }
-            RefreshDataGrid();
+
+            // Получаем выбранную книгу
+            var selectedRow = dataGridViewBooks.SelectedRows[0];
+            int bookId = (int)selectedRow.Cells["Id"].Value;
+
+            // Получаем текущие данные выбранной книги
+            var currentBook = _logic.GetAll().FirstOrDefault(b => b.Id == bookId);
+            if (currentBook == null)
+            {
+                MessageBox.Show("Книга не найдена.", "Ошибка",
+                               MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Заполняем текстовые поля текущими данными выбранной книги
+            txtTitle.Text = currentBook.Title;
+            txtAuthor.Text = currentBook.Author;
+
+            // Временно меняем функционал кнопки "Добавить" на "Сохранить изменения"
+            btnAdd.Click -= BtnAdd_Click; // Отключаем старый обработчик
+
+            // Создаем и подключаем обработчик для сохранения
+            EventHandler saveHandler = (s, ev) => SaveUpdatedBook(bookId);
+            btnAdd.Click += saveHandler;
+            btnAdd.Text = "Сохранить";
+            btnAdd.Tag = saveHandler; // Сохраняем ссылку на обработчик для последующего удаления
         }
+
+        /// <summary>
+        /// Сохраняет обновленные данные книги
+        /// </summary>
+        private void SaveUpdatedBook(int bookId)
+        {
+            if (string.IsNullOrWhiteSpace(txtTitle.Text) || string.IsNullOrWhiteSpace(txtAuthor.Text))
+            {
+                MessageBox.Show("Заполните название и автора!", "Ошибка",
+                               MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Обновляем книгу с новыми данными
+            if (_logic.Update(bookId, txtTitle.Text.Trim(), txtAuthor.Text.Trim()))
+            {
+                RefreshDataGrid();
+                MessageBox.Show("Книга успешно обновлена!", "Успех",
+                               MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Возвращаем обычный режим
+                ResetToAddMode();
+            }
+            else
+            {
+                MessageBox.Show("Ошибка при обновлении книги.", "Ошибка",
+                               MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /// <summary>
+        /// Возвращает интерфейс в режим добавления новых книг
+        /// </summary>
+        private void ResetToAddMode()
+        {
+            // Отключаем обработчик сохранения, если он был установлен
+            if (btnAdd.Tag is EventHandler saveHandler)
+            {
+                btnAdd.Click -= saveHandler;
+                btnAdd.Tag = null;
+            }
+
+            // Возвращаем обработчик добавления
+            btnAdd.Click += BtnAdd_Click;
+            btnAdd.Text = "Добавить";
+
+            // Очищаем поля
+            txtTitle.Clear();
+            txtAuthor.Clear();
+        }
+
 
         /// <summary>
         /// Обработчик кнопки группировки книг по авторам
@@ -119,7 +198,7 @@ namespace WindowsFormsApp1
         private void BtnGroup_Click(object sender, EventArgs e)
         {
             // Получаем все книги из базы данных и группируем их по автору
-            var groupedBooks = logic.GetAll()
+            var groupedBooks =  _logic.GetAll()
                 .GroupBy(b => b.Author)         // Группируем книги по полю Author
                 .OrderBy(g => g.Key);           // Сортируем группы по имени автора (А-Я)
 
@@ -153,13 +232,13 @@ namespace WindowsFormsApp1
         // Сортировка по возрастаню
         private void SortAToZToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var books = logic.GetAll().OrderBy(b => b.Title).ToList();
+            var books = _logic.GetAll().OrderBy(b => b.Title).ToList();
             RefreshDataGrid(books);
         }
         // Сортировка по убыванию
         private void SortZToAToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var books = logic.GetAll().OrderByDescending(b => b.Title).ToList();
+            var books = _logic.GetAll().OrderByDescending(b => b.Title).ToList();
             RefreshDataGrid(books);
         }
         // Сброс сортировки
@@ -186,24 +265,24 @@ namespace WindowsFormsApp1
                 case "title":
                     // Если direction = Ascending, сортируем по возрастанию, иначе - по убыванию
                     sortedBooks = direction == ListSortDirection.Ascending
-                        ? logic.GetAll().OrderBy(b => b.Title)
-                        : logic.GetAll().OrderByDescending(b => b.Title);
+                        ? _logic.GetAll().OrderBy(b => b.Title)
+                        : _logic.GetAll().OrderByDescending(b => b.Title);
                     break;
                  // сортировка по автору
                 case "author":
                     sortedBooks = direction == ListSortDirection.Ascending
-                        ? logic.GetAll().OrderBy(b => b.Author)
-                        : logic.GetAll().OrderByDescending(b => b.Author);
+                        ? _logic.GetAll().OrderBy(b => b.Author)
+                        : _logic.GetAll().OrderByDescending(b => b.Author);
                     break;
                 // сортировка по id
                 case "id":
                     sortedBooks = direction == ListSortDirection.Ascending
-                        ? logic.GetAll().OrderBy(b => b.Id)
-                        : logic.GetAll().OrderByDescending(b => b.Id);
+                        ? _logic.GetAll().OrderBy(b => b.Id)
+                        : _logic.GetAll().OrderByDescending(b => b.Id);
                     break;
 
                 default:
-                    sortedBooks = logic.GetAll();
+                    sortedBooks = _logic.GetAll();
                     break;
             }
             // Вызываем метод обновления таблицы, передавая отсортированный список, в List<Book> для работы с коллекцией
@@ -226,6 +305,7 @@ namespace WindowsFormsApp1
                 case 4: SortBooks("id", ListSortDirection.Descending); break;
                 case 5: SortBooks("id", ListSortDirection.Ascending); break;
                 case 6: dataGridViewBooks.SelectAll(); break;
+                case 7: RefreshDataGrid(); break;
             }
         }
     }

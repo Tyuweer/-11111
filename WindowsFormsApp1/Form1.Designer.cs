@@ -29,6 +29,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridViewBooks = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Author = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuSortFilter = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.sortAToZToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sortZToAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -37,9 +40,6 @@
             this.selectAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comboBoxSort = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Author = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBooks)).BeginInit();
             this.contextMenuSortFilter.SuspendLayout();
             this.SuspendLayout();
@@ -127,6 +127,27 @@
             this.dataGridViewBooks.Size = new System.Drawing.Size(949, 396);
             this.dataGridViewBooks.TabIndex = 9;
             // 
+            // Id
+            // 
+            this.Id.HeaderText = "ID";
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
+            this.Id.Width = 125;
+            // 
+            // Title
+            // 
+            this.Title.HeaderText = "Название книги";
+            this.Title.MinimumWidth = 6;
+            this.Title.Name = "Title";
+            this.Title.Width = 125;
+            // 
+            // Author
+            // 
+            this.Author.HeaderText = "Автор книги";
+            this.Author.MinimumWidth = 6;
+            this.Author.Name = "Author";
+            this.Author.Width = 125;
+            // 
             // contextMenuSortFilter
             // 
             this.contextMenuSortFilter.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -183,7 +204,8 @@
             "По автору (Я-А)",
             "По ID (новые сначала)",
             "По ID (старые сначала)",
-            "Выбрать все"});
+            "Выбрать все",
+            "Удалить фильтры"});
             this.comboBoxSort.Location = new System.Drawing.Point(748, 26);
             this.comboBoxSort.Name = "comboBoxSort";
             this.comboBoxSort.Size = new System.Drawing.Size(121, 24);
@@ -198,27 +220,6 @@
             this.label3.Size = new System.Drawing.Size(86, 16);
             this.label3.TabIndex = 11;
             this.label3.Text = "Сортировка";
-            // 
-            // Id
-            // 
-            this.Id.HeaderText = "ID";
-            this.Id.MinimumWidth = 6;
-            this.Id.Name = "Id";
-            this.Id.Width = 125;
-            // 
-            // Title
-            // 
-            this.Title.HeaderText = "Название книги";
-            this.Title.MinimumWidth = 6;
-            this.Title.Name = "Title";
-            this.Title.Width = 125;
-            // 
-            // Author
-            // 
-            this.Author.HeaderText = "Автор книги";
-            this.Author.MinimumWidth = 6;
-            this.Author.Name = "Author";
-            this.Author.Width = 125;
             // 
             // Form1
             // 

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using ModelLogic;
 using DomainModels;
 using DataAccessLayer;
+using Ninject;
 
 namespace Лаба_11111
 {
@@ -13,16 +14,9 @@ namespace Лаба_11111
     {
         static void Main()
         {
-            // Простая инициализация БД через создание репозитория
-            try
-            {
-                var testRepo = new EntityRepository<Book>();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Ошибка инициализации БД: {ex.Message}");
-            }
-            var logic = new Logic(true);
+            IKernel ninjectKernel = new StandardKernel(new SimpleConfigModule());
+            
+            var logic = ninjectKernel.Get<Logic>();
 
             while (true)
             {
@@ -35,7 +29,7 @@ namespace Лаба_11111
                         var title = Console.ReadLine();
                         Console.Write("Автор: ");
                         var author = Console.ReadLine();
-                        if (title != "" & author != "")
+                        if (title != "" && author != "")
                         {
                             logic.Add(title, author);
                         }

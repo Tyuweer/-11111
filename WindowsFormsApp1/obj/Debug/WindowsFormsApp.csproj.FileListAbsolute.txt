@@ -52,3 +52,7 @@ C:\Users\aleks\Desktop\project C#\Лаба 11111\WindowsFormsApp1\bin\Debug\Enti
 C:\Users\aleks\Desktop\project C#\Лаба 11111\WindowsFormsApp1\bin\Debug\System.Data.SqlServerCe.dll
 C:\Users\aleks\Desktop\project C#\Лаба 11111\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\aleks\Desktop\project C#\Лаба 11111\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServerCompact.xml
+C:\Users\aleks\Desktop\project C#\Лаба 11111\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\aleks\Desktop\project C#\Лаба 11111\WindowsFormsApp1\bin\Debug\Ninject.dll
+C:\Users\aleks\Desktop\project C#\Лаба 11111\WindowsFormsApp1\bin\Debug\Ninject.xml
+C:\Users\aleks\Desktop\project C#\Лаба 11111\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe.config

@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using DataAccessLayer;
 using DomainModels;
-using DataAccessLayer;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace ModelLogic
 {
@@ -10,16 +11,12 @@ namespace ModelLogic
         private readonly IRepository<Book> _repository;
 
         // Конструктор с возможностью выбора реализации репозитория
-        public Logic(bool useDapper = false)
+        public Logic(IRepository<Book> repository)
         {
-            if (useDapper)
-                _repository = new DapperRepository<Book>();
-            else
-                _repository = new EntityRepository<Book>();
+            _repository = repository ?? throw new ArgumentNullException(nameof(repository));
         }
 
         // Для обратной совместимости - используем EF по умолчанию
-        public Logic() : this(false) { }
 
         public List<Book> GetAll() => _repository.ReadAll().ToList();
 
