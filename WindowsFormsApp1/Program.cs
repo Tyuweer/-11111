@@ -8,6 +8,9 @@ using Ninject;
 
 namespace WindowsFormsApp1
 {
+    /// <summary>
+    /// Главный класс приложения Windows Forms
+    /// </summary>
     internal static class Program
     {
         /// <summary>

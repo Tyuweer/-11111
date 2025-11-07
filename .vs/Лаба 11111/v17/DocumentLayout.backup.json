@@ -15,32 +15,8 @@
       "RelativeMoniker": "D:0:0:{8DBDFF13-4D31-4D24-A850-08C43AA9F024}|ModelLogic\\ModelLogic.csproj|solutionrelative:modellogic\\simpleconfigmodule .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9F4BA15B-D847-40BF-9629-37ACCE994516}|\u041B\u0430\u0431\u0430 11111\\ConsolApp.csproj|C:\\Users\\aleks\\Desktop\\project C#\\\u041B\u0430\u0431\u0430 11111\\\u043B\u0430\u0431\u0430 11111\\consoleapp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9F4BA15B-D847-40BF-9629-37ACCE994516}|\u041B\u0430\u0431\u0430 11111\\ConsolApp.csproj|solutionrelative:\u043B\u0430\u0431\u0430 11111\\consoleapp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{013BF96A-3413-46D9-B2D1-4BB7BD94D891}|DataAccessLayer\\DataAccessLayer.csproj|C:\\Users\\aleks\\Desktop\\project C#\\\u041B\u0430\u0431\u0430 11111\\dataaccesslayer\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{013BF96A-3413-46D9-B2D1-4BB7BD94D891}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8DBDFF13-4D31-4D24-A850-08C43AA9F024}|ModelLogic\\ModelLogic.csproj|c:\\users\\aleks\\desktop\\project c#\\\u043B\u0430\u0431\u0430 11111\\modellogic\\logic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DBDFF13-4D31-4D24-A850-08C43AA9F024}|ModelLogic\\ModelLogic.csproj|solutionrelative:modellogic\\logic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{013BF96A-3413-46D9-B2D1-4BB7BD94D891}|DataAccessLayer\\DataAccessLayer.csproj|C:\\Users\\aleks\\Desktop\\project C#\\\u041B\u0430\u0431\u0430 11111\\dataaccesslayer\\dapperrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{013BF96A-3413-46D9-B2D1-4BB7BD94D891}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\dapperrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{013BF96A-3413-46D9-B2D1-4BB7BD94D891}|DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\aleks\\desktop\\project c#\\\u043B\u0430\u0431\u0430 11111\\dataaccesslayer\\entityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{013BF96A-3413-46D9-B2D1-4BB7BD94D891}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\entityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DF30BE0A-2767-40C6-AFB4-45EEAAC8F893}|WindowsFormsApp1\\WindowsFormsApp.csproj|c:\\users\\aleks\\desktop\\project c#\\\u043B\u0430\u0431\u0430 11111\\windowsformsapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DF30BE0A-2767-40C6-AFB4-45EEAAC8F893}|WindowsFormsApp1\\WindowsFormsApp.csproj|solutionrelative:windowsformsapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DF30BE0A-2767-40C6-AFB4-45EEAAC8F893}|WindowsFormsApp1\\WindowsFormsApp.csproj|c:\\users\\aleks\\desktop\\project c#\\\u043B\u0430\u0431\u0430 11111\\windowsformsapp1\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DF30BE0A-2767-40C6-AFB4-45EEAAC8F893}|WindowsFormsApp1\\WindowsFormsApp.csproj|solutionrelative:windowsformsapp1\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{013BF96A-3413-46D9-B2D1-4BB7BD94D891}|DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\aleks\\desktop\\project c#\\\u043B\u0430\u0431\u0430 11111\\dataaccesslayer\\databaseinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{013BF96A-3413-46D9-B2D1-4BB7BD94D891}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\databaseinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,47 +26,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 5,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "EntityRepository.cs",
-              "DocumentMoniker": "C:\\Users\\aleks\\Desktop\\project C#\\\u041B\u0430\u0431\u0430 11111\\DataAccessLayer\\EntityRepository.cs",
-              "RelativeDocumentMoniker": "DataAccessLayer\\EntityRepository.cs",
-              "ToolTip": "C:\\Users\\aleks\\Desktop\\project C#\\\u041B\u0430\u0431\u0430 11111\\DataAccessLayer\\EntityRepository.cs",
-              "RelativeToolTip": "DataAccessLayer\\EntityRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T14:10:11.432Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Form1.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\aleks\\Desktop\\project C#\\\u041B\u0430\u0431\u0430 11111\\WindowsFormsApp1\\Form1.Designer.cs",
-              "RelativeDocumentMoniker": "WindowsFormsApp1\\Form1.Designer.cs",
-              "ToolTip": "C:\\Users\\aleks\\Desktop\\project C#\\\u041B\u0430\u0431\u0430 11111\\WindowsFormsApp1\\Form1.Designer.cs",
-              "RelativeToolTip": "WindowsFormsApp1\\Form1.Designer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T14:02:08.368Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\aleks\\Desktop\\project C#\\\u041B\u0430\u0431\u0430 11111\\WindowsFormsApp1\\Program.cs",
-              "RelativeDocumentMoniker": "WindowsFormsApp1\\Program.cs",
-              "ToolTip": "C:\\Users\\aleks\\Desktop\\project C#\\\u041B\u0430\u0431\u0430 11111\\WindowsFormsApp1\\Program.cs",
-              "RelativeToolTip": "WindowsFormsApp1\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T13:57:14.467Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
@@ -111,61 +48,22 @@
               "RelativeDocumentMoniker": "ModelLogic\\SimpleConfigModule .cs",
               "ToolTip": "C:\\Users\\aleks\\Desktop\\project C#\\\u041B\u0430\u0431\u0430 11111\\ModelLogic\\SimpleConfigModule .cs",
               "RelativeToolTip": "ModelLogic\\SimpleConfigModule .cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABhAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAB8AAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T13:51:19.453Z",
+              "WhenOpened": "2025-11-07T06:15:17.465Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "ConsoleApp.cs",
-              "DocumentMoniker": "C:\\Users\\aleks\\Desktop\\project C#\\\u041B\u0430\u0431\u0430 11111\\\u041B\u0430\u0431\u0430 11111\\ConsoleApp.cs",
-              "RelativeDocumentMoniker": "\u041B\u0430\u0431\u0430 11111\\ConsoleApp.cs",
-              "ToolTip": "C:\\Users\\aleks\\Desktop\\project C#\\\u041B\u0430\u0431\u0430 11111\\\u041B\u0430\u0431\u0430 11111\\ConsoleApp.cs",
-              "RelativeToolTip": "\u041B\u0430\u0431\u0430 11111\\ConsoleApp.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAZAAAAAAAAAA==",
+              "Title": "DatabaseInitializer.cs",
+              "DocumentMoniker": "C:\\Users\\aleks\\Desktop\\project C#\\\u041B\u0430\u0431\u0430 11111\\DataAccessLayer\\DatabaseInitializer.cs",
+              "RelativeDocumentMoniker": "DataAccessLayer\\DatabaseInitializer.cs",
+              "ToolTip": "C:\\Users\\aleks\\Desktop\\project C#\\\u041B\u0430\u0431\u0430 11111\\DataAccessLayer\\DatabaseInitializer.cs",
+              "RelativeToolTip": "DataAccessLayer\\DatabaseInitializer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T13:35:37.179Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "DapperRepository.cs",
-              "DocumentMoniker": "C:\\Users\\aleks\\Desktop\\project C#\\\u041B\u0430\u0431\u0430 11111\\DataAccessLayer\\DapperRepository.cs",
-              "RelativeDocumentMoniker": "DataAccessLayer\\DapperRepository.cs",
-              "ToolTip": "C:\\Users\\aleks\\Desktop\\project C#\\\u041B\u0430\u0431\u0430 11111\\DataAccessLayer\\DapperRepository.cs",
-              "RelativeToolTip": "DataAccessLayer\\DapperRepository.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T13:30:12Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "IRepository.cs",
-              "DocumentMoniker": "C:\\Users\\aleks\\Desktop\\project C#\\\u041B\u0430\u0431\u0430 11111\\DataAccessLayer\\IRepository.cs",
-              "RelativeDocumentMoniker": "DataAccessLayer\\IRepository.cs",
-              "ToolTip": "C:\\Users\\aleks\\Desktop\\project C#\\\u041B\u0430\u0431\u0430 11111\\DataAccessLayer\\IRepository.cs",
-              "RelativeToolTip": "DataAccessLayer\\IRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T13:30:00.886Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Logic.cs",
-              "DocumentMoniker": "C:\\Users\\aleks\\Desktop\\project C#\\\u041B\u0430\u0431\u0430 11111\\ModelLogic\\Logic.cs",
-              "RelativeDocumentMoniker": "ModelLogic\\Logic.cs",
-              "ToolTip": "C:\\Users\\aleks\\Desktop\\project C#\\\u041B\u0430\u0431\u0430 11111\\ModelLogic\\Logic.cs",
-              "RelativeToolTip": "ModelLogic\\Logic.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwBMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T13:25:55.894Z",
+              "WhenOpened": "2025-11-07T06:10:29.7Z",
               "EditorCaption": ""
             },
             {
@@ -174,9 +72,9 @@
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\aleks\\Desktop\\project C#\\\u041B\u0430\u0431\u0430 11111\\WindowsFormsApp1\\Form1.cs",
               "RelativeDocumentMoniker": "WindowsFormsApp1\\Form1.cs",
-              "ToolTip": "C:\\Users\\aleks\\Desktop\\project C#\\\u041B\u0430\u0431\u0430 11111\\WindowsFormsApp1\\Form1.cs",
-              "RelativeToolTip": "WindowsFormsApp1\\Form1.cs",
-              "ViewState": "AgIAAJIAAAAAAAAAAAA4wKgAAAAaAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\aleks\\Desktop\\project C#\\\u041B\u0430\u0431\u0430 11111\\WindowsFormsApp1\\Form1.cs*",
+              "RelativeToolTip": "WindowsFormsApp1\\Form1.cs*",
+              "ViewState": "AgIAAI8AAAAAAAAAAAAswJ8AAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-13T07:32:22.478Z",
               "EditorCaption": ""
@@ -187,8 +85,8 @@
               "Title": "Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "DocumentMoniker": "C:\\Users\\aleks\\Desktop\\project C#\\\u041B\u0430\u0431\u0430 11111\\WindowsFormsApp1\\Form1.cs",
               "RelativeDocumentMoniker": "WindowsFormsApp1\\Form1.cs",
-              "ToolTip": "C:\\Users\\aleks\\Desktop\\project C#\\\u041B\u0430\u0431\u0430 11111\\WindowsFormsApp1\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "RelativeToolTip": "WindowsFormsApp1\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "ToolTip": "C:\\Users\\aleks\\Desktop\\project C#\\\u041B\u0430\u0431\u0430 11111\\WindowsFormsApp1\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]*",
+              "RelativeToolTip": "WindowsFormsApp1\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-26T10:50:54.278Z",
               "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"

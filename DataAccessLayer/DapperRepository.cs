@@ -6,16 +6,27 @@ using DomainModels;
 
 namespace DataAccessLayer
 {
+    /// <summary>
+    /// Реализация репозитория с использованием Dapper
+    /// </summary>
+    /// <typeparam name="T">Тип сущности</typeparam>
     // Реализуем generic интерфейс, Ограничение: T должен быть классом (не структурой), Ограничение: T должен реализовывать интерфейс IDomainObject
     public class DapperRepository<T> : IRepository<T> where T : class, IDomainObject
     {
         private readonly string _connectionString;
 
+        /// <summary>
+        /// Инициализирует новый экземпляр репозитория Dapper
+        /// </summary>
         public DapperRepository()
         {
             _connectionString = DatabaseConfig.ConnectionString;
         }
 
+        /// <summary>
+        /// Добавляет сущность через Dapper
+        /// </summary>
+        /// <param name="item">Добавляемая сущность</param>
         public void Add(T item)
         {
             // Создается объект подключения к БД
@@ -31,6 +42,7 @@ namespace DataAccessLayer
                 string sql = "INSERT INTO Books (Title, Author) VALUES (@Title, @Author)";
                 // Для использования Dapper, Dapper смотрит на все свойства объекта, автоматически создает параметры
                 // sql Server выполняет запрос и атоматически генерирует ID
+                // sql — это строка с SQL-командой, а item — это набор данных, который подставляется в запрос вместо заполнителей
                 connection.Execute(sql, item);
             }
             //using нужен для гарантирует, что подключение к БД будет закрыто в любом случае -
@@ -38,6 +50,10 @@ namespace DataAccessLayer
             // после закрытия блока using вызывается Process Dispose(): Он закрывает подключение к БД
         }
 
+        /// <summary>
+        /// Удаляет сущность по идентификатору через Dapper
+        /// </summary>
+        /// <param name="id">Идентификатор сущности</param>
         public void Delete(int id)
         {
             using (var connection = new SqlConnection(_connectionString))
@@ -47,7 +63,10 @@ namespace DataAccessLayer
                 connection.Execute(sql, new { Id = id });
             }
         }
-
+        /// <summary>
+        /// Получает все сущности через Dapper
+        /// </summary>
+        /// <returns>Коллекция всех сущностей</returns>
         public IEnumerable<T> ReadAll()
         {
             using (var connection = new SqlConnection(_connectionString))
@@ -61,6 +80,11 @@ namespace DataAccessLayer
             }
         }
 
+        /// <summary>
+        /// Получает сущность по идентификатору через Dapper
+        /// </summary>
+        /// <param name="id">Идентификатор сущности</param>
+        /// <returns>Найденная сущность или null</returns>
         public T ReadById(int id)
         {
             using (var connection = new SqlConnection(_connectionString))
@@ -75,6 +99,10 @@ namespace DataAccessLayer
             }
         }
 
+        /// <summary>
+        /// Обновляет сущность через Dapper
+        /// </summary>
+        /// <param name="item">Сущность с обновленными данными</param>
         public void Update(T item)
         {
             using (var connection = new SqlConnection(_connectionString))

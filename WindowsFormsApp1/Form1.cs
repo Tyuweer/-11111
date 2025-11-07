@@ -14,10 +14,19 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
+    /// <summary>
+    /// Главная форма приложения для управления библиотекой книг
+    /// </summary>
     public partial class Form1 : Form
     {
-        private readonly Logic _logic;
-        public Form1(Logic logic)
+        private readonly IBookLogic _logic;
+
+
+        /// <summary>
+        /// Инициализирует форму с внедренной бизнес-логикой
+        /// </summary>
+        /// <param name="logic">Реализация бизнес-логики</param>
+        public Form1(IBookLogic logic)
         {
             InitializeComponent();
             _logic = logic;
@@ -26,7 +35,7 @@ namespace WindowsFormsApp1
         }
 
         /// <summary>
-        /// Настройка DataGridView
+        /// Настраивает внешний вид и поведение DataGridView
         /// </summary>
         private void SetupDataGridView()
         {
@@ -47,9 +56,10 @@ namespace WindowsFormsApp1
             // Указываем, что при правом клике по таблице должно показываться contextMenuSortFilter
             dataGridViewBooks.ContextMenuStrip = contextMenuSortFilter;
         }
-        /// <summary>   
-        /// Обновляет содержимое таблицы книг
+        /// <summary>
+        /// Обновляет данные в таблице
         /// </summary>
+        /// <param name="books">Коллекция книг для отображения (если null - загружаются все книги)</param>
         private void RefreshDataGrid(IEnumerable<Book> books = null)
         {
             // Удаляем все элементы
@@ -62,10 +72,14 @@ namespace WindowsFormsApp1
                 dataGridViewBooks.Rows.Add(book.Id, book.Title, book.Author);
             }
         }
+        // sender - это кнопка, которую нажали
+        // e - это информация о событии нажатия
 
         /// <summary>
-        /// Обработчик кнопки добавления новой книги
+        /// Обрабатывает добавление новой книги
         /// </summary>
+        /// <param name="sender">Источник события</param>
+        /// <param name="e">Данные события</param>
         private void BtnAdd_Click(object sender, EventArgs e)
         {
             if (_logic.Add(txtTitle.Text, txtAuthor.Text))
@@ -81,8 +95,10 @@ namespace WindowsFormsApp1
         }
 
         /// <summary>
-        /// Обработчик кнопки удаления выбранной книги
+        /// Обрабатывает удаление выбранных книг
         /// </summary>
+        /// <param name="sender">Источник события</param>
+        /// <param name="e">Данные события</param>
         private void BtnDelete_Click(object sender, EventArgs e)
         {
             // Проверяет выбрана ли вообще книга
@@ -101,9 +117,12 @@ namespace WindowsFormsApp1
 
             RefreshDataGrid();
         }
+
         /// <summary>
-        /// Обработчик кнопки обновления данных книги
+        /// Обрабатывает обновление данных книги
         /// </summary>
+        /// <param name="sender">Источник события</param>
+        /// <param name="e">Данные события</param>
         private void BtnUpdate_Click(object sender, EventArgs e)
         {
             // Проверяем, что выбрана ровно одна книга
@@ -118,7 +137,7 @@ namespace WindowsFormsApp1
             var selectedRow = dataGridViewBooks.SelectedRows[0];
             int bookId = (int)selectedRow.Cells["Id"].Value;
 
-            // Получаем текущие данные выбранной книги
+            // Получаем текущие данные выбранной книги с помощью ID
             var currentBook = _logic.GetAll().FirstOrDefault(b => b.Id == bookId);
             if (currentBook == null)
             {
@@ -135,7 +154,10 @@ namespace WindowsFormsApp1
             btnAdd.Click -= BtnAdd_Click; // Отключаем старый обработчик
 
             // Создаем и подключаем обработчик для сохранения
-            EventHandler saveHandler = (s, ev) => SaveUpdatedBook(bookId);
+            EventHandler saveHandler = delegate (object s, EventArgs ev)
+            {
+                SaveUpdatedBook(bookId);
+            };
             btnAdd.Click += saveHandler;
             btnAdd.Text = "Сохранить";
             btnAdd.Tag = saveHandler; // Сохраняем ссылку на обработчик для последующего удаления
@@ -144,6 +166,7 @@ namespace WindowsFormsApp1
         /// <summary>
         /// Сохраняет обновленные данные книги
         /// </summary>
+        /// <param name="bookId">Идентификатор обновляемой книги</param>
         private void SaveUpdatedBook(int bookId)
         {
             if (string.IsNullOrWhiteSpace(txtTitle.Text) || string.IsNullOrWhiteSpace(txtAuthor.Text))
@@ -154,6 +177,7 @@ namespace WindowsFormsApp1
             }
 
             // Обновляем книгу с новыми данными
+            // Trim удаляет лишние пробелы
             if (_logic.Update(bookId, txtTitle.Text.Trim(), txtAuthor.Text.Trim()))
             {
                 RefreshDataGrid();
@@ -176,6 +200,7 @@ namespace WindowsFormsApp1
         private void ResetToAddMode()
         {
             // Отключаем обработчик сохранения, если он был установлен
+            // Если к кнопке подключен этот обработчик то мы его отключаем
             if (btnAdd.Tag is EventHandler saveHandler)
             {
                 btnAdd.Click -= saveHandler;
@@ -193,8 +218,10 @@ namespace WindowsFormsApp1
 
 
         /// <summary>
-        /// Обработчик кнопки группировки книг по авторам
+        /// Обрабатывает группировку книг по авторам
         /// </summary>
+        /// <param name="sender">Источник события</param>
+        /// <param name="e">Данные события</param>
         private void BtnGroup_Click(object sender, EventArgs e)
         {
             // Получаем все книги из базы данных и группируем их по автору
@@ -228,31 +255,53 @@ namespace WindowsFormsApp1
             }
         }
 
-        // Обработчики контекстного меню
-        // Сортировка по возрастаню
+        /// <summary>
+        /// Сортирует книги по названию в порядке А-Я
+        /// </summary>
+        /// <param name="sender">Источник события</param>
+        /// <param name="e">Данные события</param>
         private void SortAToZToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var books = _logic.GetAll().OrderBy(b => b.Title).ToList();
             RefreshDataGrid(books);
         }
-        // Сортировка по убыванию
+
+        /// <summary>
+        /// Сортирует книги по названию в порядке Я-А
+        /// </summary>
+        /// <param name="sender">Источник события</param>
+        /// <param name="e">Данные события</param>
         private void SortZToAToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var books = _logic.GetAll().OrderByDescending(b => b.Title).ToList();
             RefreshDataGrid(books);
         }
-        // Сброс сортировки
+
+        /// <summary>
+        /// Сбрасывает фильтрацию и показывает все книги
+        /// </summary>
+        /// <param name="sender">Источник события</param>
+        /// <param name="e">Данные события</param>
         private void RemoveFilterToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RefreshDataGrid();
         }
-        // Выбрать все
+
+        /// <summary>
+        /// Выделяет все строки в таблице
+        /// </summary>
+        /// <param name="sender">Источник события</param>
+        /// <param name="e">Данные события</param>
         private void SelectAllToolStripMenuItem_Click(object sender, EventArgs e)
         {
             dataGridViewBooks.SelectAll();
         }
-        // sortBy это поле для сортировки: "title", "author" или "id"
-        // direction это направление сортировки Ascending возрастание и Descending убывание
+
+        /// <summary>
+        /// Выполняет сортировку книг по указанному полю и направлению
+        /// </summary>
+        /// <param name="sortBy">Поле для сортировки: "title", "author" или "id"</param>
+        /// <param name="direction">Направление сортировки</param>
         private void SortBooks(string sortBy, ListSortDirection direction)
         {
             // IEnumerable<Book> - это интерфейс, который позволяет перебирать элементы коллекции
@@ -288,6 +337,13 @@ namespace WindowsFormsApp1
             // Вызываем метод обновления таблицы, передавая отсортированный список, в List<Book> для работы с коллекцией
             RefreshDataGrid(sortedBooks.ToList());
         }
+
+        /// <summary>
+        /// Обрабатывает изменение выбранного элемента в выпадающем списке сортировки
+        /// </summary>
+        /// <param name="sender">Источник события</param>
+        /// <param name="e">Данные события</param>
+        
         // Обработчик события изменения выбранного элемента в выпадающем списке сортировки
         // Вызывается автоматически при выборе пользователем любого пункта в ComboBox
         private void ComboBoxSort_SelectedIndexChanged(object sender, EventArgs e)

@@ -10,13 +10,17 @@ using Ninject;
 
 namespace Лаба_11111
 {
+
+    /// <summary>
+    /// Консольное приложение для управления библиотекой книг
+    /// </summary>
     class ConsoleApp
     {
         static void Main()
         {
             IKernel ninjectKernel = new StandardKernel(new SimpleConfigModule());
             
-            var logic = ninjectKernel.Get<Logic>();
+            var logic = ninjectKernel.Get<IBookLogic>();
 
             while (true)
             {
