@@ -56,3 +56,68 @@ C:\Users\aleks\Desktop\project C#\Лаба 11111\WindowsFormsApp1\bin\Debug\Wind
 C:\Users\aleks\Desktop\project C#\Лаба 11111\WindowsFormsApp1\bin\Debug\Ninject.dll
 C:\Users\aleks\Desktop\project C#\Лаба 11111\WindowsFormsApp1\bin\Debug\Ninject.xml
 C:\Users\aleks\Desktop\project C#\Лаба 11111\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe.config
+C:\Users\kiril\Downloads\-11111-develop\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\kiril\Downloads\-11111-develop\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\kiril\Downloads\-11111-develop\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\kiril\Downloads\-11111-develop\WindowsFormsApp1\bin\Debug\DataAccessLayer.dll
+C:\Users\kiril\Downloads\-11111-develop\WindowsFormsApp1\bin\Debug\DomainModels.dll
+C:\Users\kiril\Downloads\-11111-develop\WindowsFormsApp1\bin\Debug\EntityFramework.dll
+C:\Users\kiril\Downloads\-11111-develop\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\kiril\Downloads\-11111-develop\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServerCompact.dll
+C:\Users\kiril\Downloads\-11111-develop\WindowsFormsApp1\bin\Debug\ModelLogic.dll
+C:\Users\kiril\Downloads\-11111-develop\WindowsFormsApp1\bin\Debug\Ninject.dll
+C:\Users\kiril\Downloads\-11111-develop\WindowsFormsApp1\bin\Debug\System.Data.SqlServerCe.dll
+C:\Users\kiril\Downloads\-11111-develop\WindowsFormsApp1\bin\Debug\Dapper.dll
+C:\Users\kiril\Downloads\-11111-develop\WindowsFormsApp1\bin\Debug\DataAccessLayer.pdb
+C:\Users\kiril\Downloads\-11111-develop\WindowsFormsApp1\bin\Debug\DataAccessLayer.dll.config
+C:\Users\kiril\Downloads\-11111-develop\WindowsFormsApp1\bin\Debug\DomainModels.pdb
+C:\Users\kiril\Downloads\-11111-develop\WindowsFormsApp1\bin\Debug\DomainModels.dll.config
+C:\Users\kiril\Downloads\-11111-develop\WindowsFormsApp1\bin\Debug\ModelLogic.pdb
+C:\Users\kiril\Downloads\-11111-develop\WindowsFormsApp1\bin\Debug\ModelLogic.dll.config
+C:\Users\kiril\Downloads\-11111-develop\WindowsFormsApp1\bin\Debug\EntityFramework.xml
+C:\Users\kiril\Downloads\-11111-develop\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\kiril\Downloads\-11111-develop\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServerCompact.xml
+C:\Users\kiril\Downloads\-11111-develop\WindowsFormsApp1\bin\Debug\Ninject.xml
+C:\Users\kiril\Downloads\-11111-develop\WindowsFormsApp1\bin\Debug\Dapper.pdb
+C:\Users\kiril\Downloads\-11111-develop\WindowsFormsApp1\bin\Debug\Dapper.xml
+C:\Users\kiril\Downloads\-11111-develop\WindowsFormsApp1\obj\Debug\WindowsFormsApp.csproj.AssemblyReference.cache
+C:\Users\kiril\Downloads\-11111-develop\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\kiril\Downloads\-11111-develop\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\kiril\Downloads\-11111-develop\WindowsFormsApp1\obj\Debug\WindowsFormsApp.csproj.GenerateResource.cache
+C:\Users\kiril\Downloads\-11111-develop\WindowsFormsApp1\obj\Debug\WindowsFormsApp.csproj.CoreCompileInputs.cache
+C:\Users\kiril\Downloads\-11111-develop\WindowsFormsApp1\obj\Debug\WindowsF.5F5EF213.Up2Date
+C:\Users\kiril\Downloads\-11111-develop\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\kiril\Downloads\-11111-develop\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\WindowsFormsApp1\bin\Debug\DataAccessLayer.dll
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\WindowsFormsApp1\bin\Debug\DomainModels.dll
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\WindowsFormsApp1\bin\Debug\EntityFramework.dll
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServerCompact.dll
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\WindowsFormsApp1\bin\Debug\ModelLogic.dll
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\WindowsFormsApp1\bin\Debug\Ninject.dll
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\WindowsFormsApp1\bin\Debug\System.Data.SqlServerCe.dll
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\WindowsFormsApp1\bin\Debug\Dapper.dll
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\WindowsFormsApp1\bin\Debug\DataAccessLayer.pdb
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\WindowsFormsApp1\bin\Debug\DataAccessLayer.dll.config
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\WindowsFormsApp1\bin\Debug\DomainModels.pdb
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\WindowsFormsApp1\bin\Debug\DomainModels.dll.config
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\WindowsFormsApp1\bin\Debug\ModelLogic.pdb
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\WindowsFormsApp1\bin\Debug\ModelLogic.dll.config
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\WindowsFormsApp1\bin\Debug\EntityFramework.xml
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServerCompact.xml
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\WindowsFormsApp1\bin\Debug\Ninject.xml
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\WindowsFormsApp1\bin\Debug\Dapper.pdb
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\WindowsFormsApp1\bin\Debug\Dapper.xml
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\WindowsFormsApp1\obj\Debug\WindowsFormsApp.csproj.AssemblyReference.cache
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe.config
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\WindowsFormsApp1\obj\Debug\WindowsFormsApp.csproj.GenerateResource.cache
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\WindowsFormsApp1\obj\Debug\WindowsFormsApp.csproj.CoreCompileInputs.cache
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\WindowsFormsApp1\obj\Debug\WindowsF.5F5EF213.Up2Date
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb

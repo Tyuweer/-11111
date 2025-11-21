@@ -32,6 +32,7 @@
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Author = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Genre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuSortFilter = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.sortAToZToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sortZToAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,6 +41,13 @@
             this.selectAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comboBoxSort = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtGenre = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnBest = new System.Windows.Forms.Button();
+            this.txtRaiting = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.Btn_Raiting = new System.Windows.Forms.Button();
+            this.Raiting = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBooks)).BeginInit();
             this.contextMenuSortFilter.SuspendLayout();
             this.SuspendLayout();
@@ -60,7 +68,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(361, 28);
+            this.btnAdd.Location = new System.Drawing.Point(448, 27);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(80, 23);
             this.btnAdd.TabIndex = 2;
@@ -69,7 +77,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(447, 28);
+            this.btnDelete.Location = new System.Drawing.Point(534, 27);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(80, 23);
             this.btnDelete.TabIndex = 3;
@@ -78,7 +86,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(533, 28);
+            this.btnUpdate.Location = new System.Drawing.Point(620, 27);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(80, 23);
             this.btnUpdate.TabIndex = 4;
@@ -87,7 +95,7 @@
             // 
             // btnGroup
             // 
-            this.btnGroup.Location = new System.Drawing.Point(619, 28);
+            this.btnGroup.Location = new System.Drawing.Point(706, 27);
             this.btnGroup.Name = "btnGroup";
             this.btnGroup.Size = new System.Drawing.Size(107, 23);
             this.btnGroup.TabIndex = 5;
@@ -118,13 +126,15 @@
             this.dataGridViewBooks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
             this.Title,
-            this.Author});
+            this.Author,
+            this.Genre,
+            this.Raiting});
             this.dataGridViewBooks.ContextMenuStrip = this.contextMenuSortFilter;
-            this.dataGridViewBooks.Location = new System.Drawing.Point(12, 71);
+            this.dataGridViewBooks.Location = new System.Drawing.Point(12, 124);
             this.dataGridViewBooks.Name = "dataGridViewBooks";
             this.dataGridViewBooks.RowHeadersWidth = 51;
             this.dataGridViewBooks.RowTemplate.Height = 24;
-            this.dataGridViewBooks.Size = new System.Drawing.Size(949, 396);
+            this.dataGridViewBooks.Size = new System.Drawing.Size(949, 343);
             this.dataGridViewBooks.TabIndex = 9;
             // 
             // Id
@@ -147,6 +157,13 @@
             this.Author.MinimumWidth = 6;
             this.Author.Name = "Author";
             this.Author.Width = 125;
+            // 
+            // Genre
+            // 
+            this.Genre.HeaderText = "Жанр";
+            this.Genre.MinimumWidth = 6;
+            this.Genre.Name = "Genre";
+            this.Genre.Width = 125;
             // 
             // contextMenuSortFilter
             // 
@@ -206,7 +223,7 @@
             "По ID (старые сначала)",
             "Выбрать все",
             "Удалить фильтры"});
-            this.comboBoxSort.Location = new System.Drawing.Point(748, 26);
+            this.comboBoxSort.Location = new System.Drawing.Point(819, 27);
             this.comboBoxSort.Name = "comboBoxSort";
             this.comboBoxSort.Size = new System.Drawing.Size(121, 24);
             this.comboBoxSort.TabIndex = 10;
@@ -215,15 +232,80 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(745, 7);
+            this.label3.Location = new System.Drawing.Point(816, 3);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 16);
             this.label3.TabIndex = 11;
             this.label3.Text = "Сортировка";
             // 
+            // txtGenre
+            // 
+            this.txtGenre.Location = new System.Drawing.Point(342, 27);
+            this.txtGenre.Name = "txtGenre";
+            this.txtGenre.Size = new System.Drawing.Size(100, 22);
+            this.txtGenre.TabIndex = 12;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(342, 5);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(44, 16);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Жанр";
+            // 
+            // btnBest
+            // 
+            this.btnBest.Location = new System.Drawing.Point(448, 0);
+            this.btnBest.Name = "btnBest";
+            this.btnBest.Size = new System.Drawing.Size(150, 23);
+            this.btnBest.TabIndex = 14;
+            this.btnBest.Text = "Интересные книги";
+            this.btnBest.UseVisualStyleBackColor = true;
+            this.btnBest.Click += new System.EventHandler(this.btnBest_Click);
+            // 
+            // txtRaiting
+            // 
+            this.txtRaiting.Location = new System.Drawing.Point(16, 76);
+            this.txtRaiting.Name = "txtRaiting";
+            this.txtRaiting.Size = new System.Drawing.Size(100, 22);
+            this.txtRaiting.TabIndex = 15;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(13, 57);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(101, 16);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Рейтинг книги";
+            // 
+            // Btn_Raiting
+            // 
+            this.Btn_Raiting.Location = new System.Drawing.Point(122, 75);
+            this.Btn_Raiting.Name = "Btn_Raiting";
+            this.Btn_Raiting.Size = new System.Drawing.Size(75, 23);
+            this.Btn_Raiting.TabIndex = 17;
+            this.Btn_Raiting.Text = "Поиск";
+            this.Btn_Raiting.UseVisualStyleBackColor = true;
+            this.Btn_Raiting.Click += new System.EventHandler(this.Btn_Raiting_Click);
+            // 
+            // Raiting
+            // 
+            this.Raiting.HeaderText = "Рейтинг";
+            this.Raiting.MinimumWidth = 6;
+            this.Raiting.Name = "Raiting";
+            this.Raiting.Width = 125;
+            // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(982, 479);
+            this.Controls.Add(this.Btn_Raiting);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtRaiting);
+            this.Controls.Add(this.btnBest);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtGenre);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBoxSort);
             this.Controls.Add(this.dataGridViewBooks);
@@ -258,6 +340,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Title;
         private System.Windows.Forms.DataGridViewTextBoxColumn Author;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Genre;
+        private System.Windows.Forms.TextBox txtGenre;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnBest;
+        private System.Windows.Forms.TextBox txtRaiting;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button Btn_Raiting;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Raiting;
         //#region Код, автоматически созданный конструктором форм Windows
         //
         ///// <summary>

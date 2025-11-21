@@ -40,3 +40,61 @@ C:\Users\aleks\Desktop\project C#\Лаба 11111\ModelLogic\bin\Debug\EntityFram
 C:\Users\aleks\Desktop\project C#\Лаба 11111\ModelLogic\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\aleks\Desktop\project C#\Лаба 11111\ModelLogic\bin\Debug\Ninject.dll
 C:\Users\aleks\Desktop\project C#\Лаба 11111\ModelLogic\bin\Debug\Ninject.xml
+C:\Users\kiril\Downloads\-11111-develop\ModelLogic\bin\Debug\ModelLogic.dll.config
+C:\Users\kiril\Downloads\-11111-develop\ModelLogic\bin\Debug\ModelLogic.dll
+C:\Users\kiril\Downloads\-11111-develop\ModelLogic\bin\Debug\ModelLogic.pdb
+C:\Users\kiril\Downloads\-11111-develop\ModelLogic\bin\Debug\DataAccessLayer.dll
+C:\Users\kiril\Downloads\-11111-develop\ModelLogic\bin\Debug\DomainModels.dll
+C:\Users\kiril\Downloads\-11111-develop\ModelLogic\bin\Debug\Ninject.dll
+C:\Users\kiril\Downloads\-11111-develop\ModelLogic\bin\Debug\EntityFramework.dll
+C:\Users\kiril\Downloads\-11111-develop\ModelLogic\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\kiril\Downloads\-11111-develop\ModelLogic\bin\Debug\Dapper.dll
+C:\Users\kiril\Downloads\-11111-develop\ModelLogic\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\kiril\Downloads\-11111-develop\ModelLogic\bin\Debug\System.ValueTuple.dll
+C:\Users\kiril\Downloads\-11111-develop\ModelLogic\bin\Debug\DataAccessLayer.pdb
+C:\Users\kiril\Downloads\-11111-develop\ModelLogic\bin\Debug\DataAccessLayer.dll.config
+C:\Users\kiril\Downloads\-11111-develop\ModelLogic\bin\Debug\DomainModels.pdb
+C:\Users\kiril\Downloads\-11111-develop\ModelLogic\bin\Debug\DomainModels.dll.config
+C:\Users\kiril\Downloads\-11111-develop\ModelLogic\bin\Debug\Ninject.xml
+C:\Users\kiril\Downloads\-11111-develop\ModelLogic\bin\Debug\EntityFramework.xml
+C:\Users\kiril\Downloads\-11111-develop\ModelLogic\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\kiril\Downloads\-11111-develop\ModelLogic\bin\Debug\Dapper.pdb
+C:\Users\kiril\Downloads\-11111-develop\ModelLogic\bin\Debug\Dapper.xml
+C:\Users\kiril\Downloads\-11111-develop\ModelLogic\obj\Debug\ModelLogic.csproj.AssemblyReference.cache
+C:\Users\kiril\Downloads\-11111-develop\ModelLogic\obj\Debug\ModelLogic.csproj.CoreCompileInputs.cache
+C:\Users\kiril\Downloads\-11111-develop\ModelLogic\obj\Debug\ModelLogic.csproj.Up2Date
+C:\Users\kiril\Downloads\-11111-develop\ModelLogic\obj\Debug\ModelLogic.dll
+C:\Users\kiril\Downloads\-11111-develop\ModelLogic\obj\Debug\ModelLogic.pdb
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\ModelLogic\bin\Debug\ModelLogic.dll.config
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\ModelLogic\bin\Debug\ModelLogic.dll
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\ModelLogic\bin\Debug\ModelLogic.pdb
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\ModelLogic\bin\Debug\DataAccessLayer.dll
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\ModelLogic\bin\Debug\DomainModels.dll
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\ModelLogic\bin\Debug\Ninject.dll
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\ModelLogic\bin\Debug\System.Memory.dll
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\ModelLogic\bin\Debug\System.Text.Json.dll
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\ModelLogic\bin\Debug\EntityFramework.dll
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\ModelLogic\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\ModelLogic\bin\Debug\Dapper.dll
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\ModelLogic\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\ModelLogic\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\ModelLogic\bin\Debug\System.Buffers.dll
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\ModelLogic\bin\Debug\System.IO.Pipelines.dll
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\ModelLogic\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\ModelLogic\bin\Debug\System.ValueTuple.dll
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\ModelLogic\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\ModelLogic\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\ModelLogic\bin\Debug\DataAccessLayer.pdb
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\ModelLogic\bin\Debug\DataAccessLayer.dll.config
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\ModelLogic\bin\Debug\DomainModels.pdb
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\ModelLogic\bin\Debug\DomainModels.dll.config
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\ModelLogic\bin\Debug\Ninject.xml
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\ModelLogic\bin\Debug\EntityFramework.xml
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\ModelLogic\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\ModelLogic\bin\Debug\Dapper.pdb
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\ModelLogic\bin\Debug\Dapper.xml
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\ModelLogic\obj\Debug\ModelLogic.csproj.AssemblyReference.cache
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\ModelLogic\obj\Debug\ModelLogic.csproj.CoreCompileInputs.cache
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\ModelLogic\obj\Debug\ModelLogic.csproj.Up2Date
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\ModelLogic\obj\Debug\ModelLogic.dll
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\ModelLogic\obj\Debug\ModelLogic.pdb

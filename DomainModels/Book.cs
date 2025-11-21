@@ -14,5 +14,9 @@ namespace DomainModels
         public string Title { get; set; }
         // Автор книги
         public string Author { get; set; }
+
+        public string Genre { get; set; }
+
+        public int Raiting { get; set; }
     }
 }

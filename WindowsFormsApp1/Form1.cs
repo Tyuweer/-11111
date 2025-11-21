@@ -19,14 +19,14 @@ namespace WindowsFormsApp1
     /// </summary>
     public partial class Form1 : Form
     {
-        private readonly IBookLogic _logic;
+        private readonly IGenreOperations _logic;
 
 
         /// <summary>
         /// Инициализирует форму с внедренной бизнес-логикой
         /// </summary>
         /// <param name="logic">Реализация бизнес-логики</param>
-        public Form1(IBookLogic logic)
+        public Form1(IGenreOperations logic)
         {
             InitializeComponent();
             _logic = logic;
@@ -69,7 +69,7 @@ namespace WindowsFormsApp1
 
             foreach (var book in data)
             {
-                dataGridViewBooks.Rows.Add(book.Id, book.Title, book.Author);
+                dataGridViewBooks.Rows.Add(book.Id, book.Title, book.Author, book.Genre, book.Raiting);
             }
         }
         // sender - это кнопка, которую нажали
@@ -82,11 +82,13 @@ namespace WindowsFormsApp1
         /// <param name="e">Данные события</param>
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            if (_logic.Add(txtTitle.Text, txtAuthor.Text))
+            if (_logic.Add(txtTitle.Text, txtAuthor.Text,txtGenre.Text,Convert.ToInt32(txtRaiting.Text)))
             {
                 RefreshDataGrid();
                 txtAuthor.Text = null;
                 txtTitle.Text = null;
+                txtGenre.Text = null;
+                txtRaiting.Text = null;
             }
             else
             {
@@ -149,6 +151,8 @@ namespace WindowsFormsApp1
             // Заполняем текстовые поля текущими данными выбранной книги
             txtTitle.Text = currentBook.Title;
             txtAuthor.Text = currentBook.Author;
+            txtGenre.Text = currentBook.Genre;
+            txtRaiting.Text = currentBook.Raiting.ToString();
 
             // Временно меняем функционал кнопки "Добавить" на "Сохранить изменения"
             btnAdd.Click -= BtnAdd_Click; // Отключаем старый обработчик
@@ -169,16 +173,16 @@ namespace WindowsFormsApp1
         /// <param name="bookId">Идентификатор обновляемой книги</param>
         private void SaveUpdatedBook(int bookId)
         {
-            if (string.IsNullOrWhiteSpace(txtTitle.Text) || string.IsNullOrWhiteSpace(txtAuthor.Text))
+            if (string.IsNullOrWhiteSpace(txtTitle.Text) || string.IsNullOrWhiteSpace(txtAuthor.Text) || string.IsNullOrWhiteSpace(txtGenre.Text) || string.IsNullOrWhiteSpace(txtRaiting.Text))
             {
-                MessageBox.Show("Заполните название и автора!", "Ошибка",
+                MessageBox.Show("Заполните название, автора, жанр и рейтинг!", "Ошибка",
                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             // Обновляем книгу с новыми данными
             // Trim удаляет лишние пробелы
-            if (_logic.Update(bookId, txtTitle.Text.Trim(), txtAuthor.Text.Trim()))
+            if (_logic.Update(bookId, txtTitle.Text.Trim(), txtAuthor.Text.Trim(), txtGenre.Text.Trim(), Convert.ToInt32(txtRaiting.Text.Trim())))
             {
                 RefreshDataGrid();
                 MessageBox.Show("Книга успешно обновлена!", "Успех",
@@ -250,7 +254,7 @@ namespace WindowsFormsApp1
                 // Добавляем книги этой группы
                 foreach (var book in group)
                 {
-                    dataGridViewBooks.Rows.Add(book.Id, book.Title, book.Author);
+                    dataGridViewBooks.Rows.Add(book.Id, book.Title, book.Author, book.Genre);
                 }
             }
         }
@@ -284,6 +288,7 @@ namespace WindowsFormsApp1
         /// <param name="e">Данные события</param>
         private void RemoveFilterToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            txtRaiting.Text = string.Empty;
             RefreshDataGrid();
         }
 
@@ -329,6 +334,16 @@ namespace WindowsFormsApp1
                         ? _logic.GetAll().OrderBy(b => b.Id)
                         : _logic.GetAll().OrderByDescending(b => b.Id);
                     break;
+                case "genre":
+                    sortedBooks = direction == ListSortDirection.Ascending
+                        ? _logic.GetAll().OrderBy(b => b.Genre)
+                        : _logic.GetAll().OrderByDescending(b => b.Genre);
+                    break;
+                case "raiting":
+                    sortedBooks = direction == ListSortDirection.Ascending
+                        ? _logic.GetAll().OrderBy(b => b.Raiting)
+                        : _logic.GetAll().OrderByDescending(b => b.Raiting);
+                    break;
 
                 default:
                     sortedBooks = _logic.GetAll();
@@ -360,9 +375,42 @@ namespace WindowsFormsApp1
                 case 3: SortBooks("author", ListSortDirection.Descending); break;
                 case 4: SortBooks("id", ListSortDirection.Descending); break;
                 case 5: SortBooks("id", ListSortDirection.Ascending); break;
-                case 6: dataGridViewBooks.SelectAll(); break;
-                case 7: RefreshDataGrid(); break;
+                case 6: SortBooks("genre", ListSortDirection.Descending); break;
+                case 7: SortBooks("genre", ListSortDirection.Ascending); break;
+                case 8: SortBooks("raiting", ListSortDirection.Descending); break;
+                case 9: SortBooks("raiting", ListSortDirection.Ascending); break;
+                case 10: dataGridViewBooks.SelectAll(); break;
+                case 11:
+                    {
+                        txtRaiting.Text = string.Empty;
+                        RefreshDataGrid();
+                        break;
+                    }
+                   
             }
+        }
+
+        private void btnBest_Click(object sender, EventArgs e)
+        {
+            var fantasyBooks = _logic.FindFantasyBooks();
+
+            if (fantasyBooks.Any())
+            {
+                RefreshDataGrid(fantasyBooks);
+                MessageBox.Show($"Найдено {fantasyBooks.Count} книг в жанре фэнтези",
+                              "Результат", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Книги в жанре фэнтези не найдены",
+                              "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void Btn_Raiting_Click(object sender, EventArgs e)
+        {
+            var _Raiting = _logic.FindRaitingBooks(Convert.ToInt32(txtRaiting.Text.Trim()));
+            RefreshDataGrid(_Raiting);
         }
     }
 }

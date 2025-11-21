@@ -20,11 +20,11 @@ namespace Лаба_11111
         {
             IKernel ninjectKernel = new StandardKernel(new SimpleConfigModule());
             
-            var logic = ninjectKernel.Get<IBookLogic>();
+            var logic = ninjectKernel.Get<IGenreOperations>();
 
             while (true)
             {
-                Console.WriteLine("\n1. Добавить книгу\n2. Удалить книгу\n3. Обновить книгу\n4. Показать все\n5. Найти по автору\n6. Группировать по каждому автору\n0. Выход");
+                Console.WriteLine("\n1. Добавить книгу\n2. Удалить книгу\n3. Обновить книгу\n4. Показать все\n5. Найти по автору\n6. Лучшие книги\n7. Поиск по рейтингу\n8. Группировать по каждому автору\n0. Выход");
                 var choice = Console.ReadLine();
                 switch (choice)
                 {
@@ -33,9 +33,13 @@ namespace Лаба_11111
                         var title = Console.ReadLine();
                         Console.Write("Автор: ");
                         var author = Console.ReadLine();
-                        if (title != "" && author != "")
+                        Console.Write("Жанр: ");
+                        var genre = Console.ReadLine();
+                        Console.Write("Рейтинг: ");
+                        var raiting = Convert.ToInt32(Console.ReadLine());
+                        if (title != "" && author != "" && genre != "")
                         {
-                            logic.Add(title, author);
+                            logic.Add(title, author, genre, raiting);
                         }
                         else
                         {
@@ -55,11 +59,15 @@ namespace Лаба_11111
                         var newTitle = Console.ReadLine();
                         Console.Write("Новый автор: ");
                         var newAuthor = Console.ReadLine();
-                        logic.Update(idUpd, newTitle, newAuthor);
+                        Console.Write("Новый жанр: ");
+                        var newGenre = Console.ReadLine();
+                        Console.Write("Новый рейтинг: ");
+                        var newRaiting = Convert.ToInt32(Console.ReadLine());
+                        logic.Update(idUpd, newTitle, newAuthor,newGenre, newRaiting);
                         break;
                     case "4":
                         foreach (var b in logic.GetAll())
-                            Console.WriteLine($"ID: {b.Id} | Название: {b.Title} | Автор: {b.Author}");
+                            Console.WriteLine($"ID: {b.Id} | Название: {b.Title} | Автор: {b.Author} | Жанр: {b.Genre} | Рейтинг: {b.Raiting}");
                         break;
                     case "5":
                         Console.Write("Автор: ");
@@ -70,6 +78,34 @@ namespace Лаба_11111
                             Console.WriteLine($"ID: {b.Id} | Название: {b.Title}");
                         break;
                     case "6":
+                        Console.WriteLine("\nЛучшие книги");
+                        foreach (var book in logic.FindFantasyBooks())
+                            Console.WriteLine($"Название: {book.Title} | Автор: {book.Author}");
+                        break;
+                    case "7":
+                        Console.WriteLine("Рейтинг: ");
+                        if (int.TryParse(Console.ReadLine(), out int Raiting))
+                        {
+                            var findRaitingBooks = logic.FindRaitingBooks(Raiting);
+                            if (findRaitingBooks.Any())
+                            {
+                                Console.WriteLine($"Книги с рейтингом {Raiting}:");
+                                foreach (var book in findRaitingBooks)
+                                {
+                                    Console.WriteLine($"- {book.Title} (Автор: {book.Author}, Жанр: {book.Genre}, Рейтинг: {book.Raiting})");
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("Книги с таким рейтингом не найдены.");
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("Некорректный ввод рейтинга.");
+                        }
+                        break;
+                    case "8":
                         foreach (var g in logic.GroupByAuthor())
                             Console.WriteLine(g);
                         break;

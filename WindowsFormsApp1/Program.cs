@@ -23,6 +23,7 @@ namespace WindowsFormsApp1
             Application.SetCompatibleTextRenderingDefault(false);
 
             IKernel kernel = new StandardKernel(new SimpleConfigModule());
+            var logic = kernel.Get<IGenreOperations>();
 
             var mainForm = kernel.Get<Form1>();
 

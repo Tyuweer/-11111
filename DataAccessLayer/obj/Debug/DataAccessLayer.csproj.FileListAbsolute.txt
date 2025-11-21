@@ -17,3 +17,43 @@ C:\Users\aleks\Desktop\project C#\Лаба 11111\DataAccessLayer\obj\Debug\DataA
 C:\Users\aleks\Desktop\project C#\Лаба 11111\DataAccessLayer\obj\Debug\DataAcce.E67BD773.Up2Date
 C:\Users\aleks\Desktop\project C#\Лаба 11111\DataAccessLayer\obj\Debug\DataAccessLayer.dll
 C:\Users\aleks\Desktop\project C#\Лаба 11111\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+C:\Users\kiril\Downloads\-11111-develop\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\kiril\Downloads\-11111-develop\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\kiril\Downloads\-11111-develop\DataAccessLayer\bin\Debug\Dapper.dll
+C:\Users\kiril\Downloads\-11111-develop\DataAccessLayer\bin\Debug\Dapper.Tvp.dll
+C:\Users\kiril\Downloads\-11111-develop\DataAccessLayer\bin\Debug\DomainModels.dll
+C:\Users\kiril\Downloads\-11111-develop\DataAccessLayer\bin\Debug\EntityFramework.dll
+C:\Users\kiril\Downloads\-11111-develop\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\kiril\Downloads\-11111-develop\DataAccessLayer\bin\Debug\System.Data.SqlClient.dll
+C:\Users\kiril\Downloads\-11111-develop\DataAccessLayer\bin\Debug\DomainModels.pdb
+C:\Users\kiril\Downloads\-11111-develop\DataAccessLayer\bin\Debug\DomainModels.dll.config
+C:\Users\kiril\Downloads\-11111-develop\DataAccessLayer\bin\Debug\Dapper.pdb
+C:\Users\kiril\Downloads\-11111-develop\DataAccessLayer\bin\Debug\Dapper.xml
+C:\Users\kiril\Downloads\-11111-develop\DataAccessLayer\bin\Debug\EntityFramework.xml
+C:\Users\kiril\Downloads\-11111-develop\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\kiril\Downloads\-11111-develop\DataAccessLayer\bin\Debug\System.Data.SqlClient.xml
+C:\Users\kiril\Downloads\-11111-develop\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\kiril\Downloads\-11111-develop\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\kiril\Downloads\-11111-develop\DataAccessLayer\obj\Debug\DataAcce.E67BD773.Up2Date
+C:\Users\kiril\Downloads\-11111-develop\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+C:\Users\kiril\Downloads\-11111-develop\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\DataAccessLayer\bin\Debug\Dapper.dll
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\DataAccessLayer\bin\Debug\Dapper.Tvp.dll
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\DataAccessLayer\bin\Debug\DomainModels.dll
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\DataAccessLayer\bin\Debug\EntityFramework.dll
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\DataAccessLayer\bin\Debug\System.Data.SqlClient.dll
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\DataAccessLayer\bin\Debug\DomainModels.pdb
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\DataAccessLayer\bin\Debug\DomainModels.dll.config
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\DataAccessLayer\bin\Debug\Dapper.pdb
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\DataAccessLayer\bin\Debug\Dapper.xml
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\DataAccessLayer\bin\Debug\EntityFramework.xml
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\DataAccessLayer\bin\Debug\System.Data.SqlClient.xml
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\DataAccessLayer\obj\Debug\DataAcce.E67BD773.Up2Date
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\DataAccessLayer\obj\Debug\DataAccessLayer.pdb

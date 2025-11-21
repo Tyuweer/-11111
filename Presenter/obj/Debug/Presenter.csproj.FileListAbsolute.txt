@@ -1,0 +1,6 @@
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\Presenter\bin\Debug\Presenter.dll
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\Presenter\bin\Debug\Presenter.pdb
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\Presenter\obj\Debug\Presenter.csproj.AssemblyReference.cache
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\Presenter\obj\Debug\Presenter.csproj.CoreCompileInputs.cache
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\Presenter\obj\Debug\Presenter.dll
+C:\Users\aleks\Desktop\project C#\Лаба4АИС_САНЕК\-11111-develop\Presenter\obj\Debug\Presenter.pdb

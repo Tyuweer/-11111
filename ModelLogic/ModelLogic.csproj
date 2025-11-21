@@ -50,6 +50,7 @@
     <Compile Include="IBookLogic.cs" />
     <Compile Include="BookLogic.cs" />
     <Compile Include="IBookQueryLogic.cs" />
+    <Compile Include="IGenreOperations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimpleConfigModule .cs" />
   </ItemGroup>

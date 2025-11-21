@@ -9,8 +9,10 @@ namespace ModelLogic
     /// <summary>
     /// Реализация бизнес-логики для работы с книгами
     /// </summary>
-    public class BookLogic : IBookLogic
+    public class BookLogic : IGenreOperations
     {
+        private const string FANTASY_GENRE = "Fantasy";
+
         /// <summary>
         /// Инициализирует бизнес-логику с указанным репозиторием
         /// </summary>
@@ -35,15 +37,17 @@ namespace ModelLogic
         /// </summary>
         /// <param name="title">Название книги</param>
         /// <param name="author">Автор книги</param>
+        /// <param name="genre">Жанр книги</param>
+        /// <param name="raiting">Рейтинг книги</param>
         /// <returns>True если книга успешно добавлена, False если название или автор пустые</returns>
-        public bool Add(string title, string author)
+        public bool Add(string title, string author, string genre,int raiting)
         {
             //String.IsNullOrWhiteSpace() — это метод в C#,
             //который проверяет, является ли строка null, пустой ("") или содержит только пробельные символы 
             //Если одно из этих условий верно, метод возвращает true, в противном случае — false
-            if (!string.IsNullOrWhiteSpace(title) && !string.IsNullOrWhiteSpace(author))
+            if (!string.IsNullOrWhiteSpace(title) && !string.IsNullOrWhiteSpace(author) && !string.IsNullOrWhiteSpace(genre))
             {
-                _repository.Add(new Book { Title = title, Author = author });
+                _repository.Add(new Book { Title = title, Author = author, Genre = genre, Raiting = raiting });
                 return true;
             }
             return false;
@@ -71,14 +75,18 @@ namespace ModelLogic
         /// <param name="id">Идентификатор книги для обновления</param>
         /// <param name="newTitle">Новое название книги</param>
         /// <param name="newAuthor">Новый автор книги</param>
+        /// <param name="newGenre">Новый жанр книги</param>
+        /// <param name="newRaiting">Новый рейтинг книги</param>
         /// <returns>True если книга найдена и данные обновлены, False если книга не найдена или данные невалидны</returns>
-        public bool Update(int id, string newTitle, string newAuthor)
+        public bool Update(int id, string newTitle, string newAuthor, string newGenre, int newRaiting)
         {
             var book = _repository.ReadById(id);
-            if (book != null && !string.IsNullOrWhiteSpace(newTitle) && !string.IsNullOrWhiteSpace(newAuthor))
+            if (book != null && !string.IsNullOrWhiteSpace(newTitle) && !string.IsNullOrWhiteSpace(newAuthor) && !string.IsNullOrWhiteSpace(newGenre))
             {
                 book.Title = newTitle;
                 book.Author = newAuthor;
+                book.Genre = newGenre;  
+                book.Raiting = newRaiting;
                 _repository.Update(book);
                 return true;
             }
@@ -106,6 +114,19 @@ namespace ModelLogic
             return _repository.ReadAll()
                 .GroupBy(b => b.Author)
                 .Select(g => $"{g.Key}: {g.Count()} книг")
+                .ToList();
+        }
+        public List<Book> FindFantasyBooks()
+        {
+            return _repository.ReadAll()
+                .Where(b => b.Genre != null && b.Genre.Equals(FANTASY_GENRE, StringComparison.OrdinalIgnoreCase))
+                .ToList();
+        }
+
+        public List<Book> FindRaitingBooks(int raiting)
+        {
+            return _repository.ReadAll()
+                .Where(b => b.Raiting == raiting)
                 .ToList();
         }
     }

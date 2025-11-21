@@ -8,10 +8,9 @@ namespace DataAccessLayer
 {
     public static class DatabaseConfig
     {
-        /// <summary>
-        /// Конфигурация подключения к базе данных
-        /// </summary>
         public static string ConnectionString =>
-            @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\aleks\Desktop\project C#\Лаба 11111\Лаба 11111\BookLibrary.mdf;Integrated Security=True";
+            @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=
+            C:\USERS\ALEKS\DESKTOP\PROJECT C#\ЛАБА4АИС_САНЕК\-11111-DEVELOP\ЛАБА 11111\BOOKLIBRARY.MDF;
+            Integrated Security=True";
     }
 }
