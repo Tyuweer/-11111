@@ -16,10 +16,15 @@ namespace ModelLogic
         /// </summary>
         /// <param name="title">Название книги</param>
         /// <param name="author">Автор книги</param>
+<<<<<<< HEAD
         /// <param name="genre">Автор книги</param>
         /// <param name="raiting">Рейтинг книги</param>
         /// <returns>True если книга успешно добавлена, False если данные невалидны</returns>
         bool Add(string title, string author, string genre, int raiting);
+=======
+        /// <returns>True если книга успешно добавлена, False если данные невалидны</returns>
+        bool Add(string title, string author);
+>>>>>>> b2720782dba29053f1d983004746f08cc76aba74
 
         /// <summary>
         /// Удаляет книгу по идентификатору
@@ -34,9 +39,14 @@ namespace ModelLogic
         /// <param name="id">Идентификатор книги для обновления</param>
         /// <param name="newTitle">Новое название книги</param>
         /// <param name="newAuthor">Новый автор книги</param>
+<<<<<<< HEAD
         /// <param name="newGenre">Новый автор книги</param>
         /// <param name="newRaiting">Новый рейтинг книги</param>
         /// <returns>True если книга найдена и данные обновлены, False если книга не найдена или данные невалидны</returns>
         bool Update(int id, string newTitle, string newAuthor, string newGenre, int newRaiting);
+=======
+        /// <returns>True если книга найдена и данные обновлены, False если книга не найдена или данные невалидны</returns>
+        bool Update(int id, string newTitle, string newAuthor);
+>>>>>>> b2720782dba29053f1d983004746f08cc76aba74
     }
 }

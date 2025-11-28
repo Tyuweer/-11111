@@ -108,7 +108,11 @@ namespace DataAccessLayer
             using (var connection = new SqlConnection(_connectionString))
             {
                 connection.Open();
+<<<<<<< HEAD
                 string sql = "UPDATE Books SET Title = @Title, Author = @Author WHERE Id = @Id, Genre = @Genre";
+=======
+                string sql = "UPDATE Books SET Title = @Title, Author = @Author WHERE Id = @Id";
+>>>>>>> b2720782dba29053f1d983004746f08cc76aba74
                 connection.Execute(sql, item);
             }
         }

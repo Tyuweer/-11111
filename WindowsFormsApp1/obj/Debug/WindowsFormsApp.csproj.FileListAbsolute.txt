@@ -56,6 +56,7 @@ C:\Users\aleks\Desktop\project C#\Лаба 11111\WindowsFormsApp1\bin\Debug\Wind
 C:\Users\aleks\Desktop\project C#\Лаба 11111\WindowsFormsApp1\bin\Debug\Ninject.dll
 C:\Users\aleks\Desktop\project C#\Лаба 11111\WindowsFormsApp1\bin\Debug\Ninject.xml
 C:\Users\aleks\Desktop\project C#\Лаба 11111\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe.config
+<<<<<<< HEAD
 C:\Users\kiril\Downloads\-11111-develop\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
 C:\Users\kiril\Downloads\-11111-develop\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
 C:\Users\kiril\Downloads\-11111-develop\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
@@ -125,3 +126,5 @@ C:\Users\aleks\Desktop\-11111-develop\WindowsFormsApp1\bin\Debug\PresenterLayer.
 C:\Users\aleks\Desktop\-11111-develop\WindowsFormsApp1\bin\Debug\Sared.dll
 C:\Users\aleks\Desktop\-11111-develop\WindowsFormsApp1\bin\Debug\PresenterLayer.pdb
 C:\Users\aleks\Desktop\-11111-develop\WindowsFormsApp1\bin\Debug\Sared.pdb
+=======
+>>>>>>> b2720782dba29053f1d983004746f08cc76aba74

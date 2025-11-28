@@ -25,8 +25,12 @@ namespace DataAccessLayer
             // Устанавливаем стратегию инициализации БД
             //Если БД не существует → создает новую +запускает Seed()
             //Если БД уже существует → ничего не делает
+<<<<<<< HEAD
             //Database.SetInitializer(new DatabaseInitializer());
             Database.SetInitializer<AppDbContext>(null);
+=======
+            Database.SetInitializer(new DatabaseInitializer());
+>>>>>>> b2720782dba29053f1d983004746f08cc76aba74
         }
 
         /// <summary>

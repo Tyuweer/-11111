@@ -40,6 +40,7 @@ C:\Users\aleks\Desktop\project C#\Лаба 11111\ModelLogic\bin\Debug\EntityFram
 C:\Users\aleks\Desktop\project C#\Лаба 11111\ModelLogic\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\aleks\Desktop\project C#\Лаба 11111\ModelLogic\bin\Debug\Ninject.dll
 C:\Users\aleks\Desktop\project C#\Лаба 11111\ModelLogic\bin\Debug\Ninject.xml
+<<<<<<< HEAD
 C:\Users\kiril\Downloads\-11111-develop\ModelLogic\bin\Debug\ModelLogic.dll.config
 C:\Users\kiril\Downloads\-11111-develop\ModelLogic\bin\Debug\ModelLogic.dll
 C:\Users\kiril\Downloads\-11111-develop\ModelLogic\bin\Debug\ModelLogic.pdb
@@ -98,3 +99,5 @@ C:\Users\aleks\Desktop\-11111-develop\ModelLogic\obj\Debug\ModelLogic.csproj.Cor
 C:\Users\aleks\Desktop\-11111-develop\ModelLogic\obj\Debug\ModelLogic.csproj.Up2Date
 C:\Users\aleks\Desktop\-11111-develop\ModelLogic\obj\Debug\ModelLogic.dll
 C:\Users\aleks\Desktop\-11111-develop\ModelLogic\obj\Debug\ModelLogic.pdb
+=======
+>>>>>>> b2720782dba29053f1d983004746f08cc76aba74

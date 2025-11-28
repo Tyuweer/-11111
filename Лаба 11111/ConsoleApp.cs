@@ -3,9 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+<<<<<<< HEAD
 using DomainModels;
 using Ninject;
 using ModelLogic;
+=======
+using ModelLogic;
+using DomainModels;
+using DataAccessLayer;
+using Ninject;
+>>>>>>> b2720782dba29053f1d983004746f08cc76aba74
 
 namespace Лаба_11111
 {
@@ -19,11 +26,19 @@ namespace Лаба_11111
         {
             IKernel ninjectKernel = new StandardKernel(new SimpleConfigModule());
             
+<<<<<<< HEAD
             var logic = ninjectKernel.Get<IGenreOperations>();
 
             while (true)
             {
                 Console.WriteLine("\n1. Добавить книгу\n2. Удалить книгу\n3. Обновить книгу\n4. Показать все\n5. Найти по автору\n6. Лучшие книги\n7. Поиск по рейтингу\n8. Группировать по каждому автору\n0. Выход");
+=======
+            var logic = ninjectKernel.Get<IBookLogic>();
+
+            while (true)
+            {
+                Console.WriteLine("\n1. Добавить книгу\n2. Удалить книгу\n3. Обновить книгу\n4. Показать все\n5. Найти по автору\n6. Группировать по каждому автору\n0. Выход");
+>>>>>>> b2720782dba29053f1d983004746f08cc76aba74
                 var choice = Console.ReadLine();
                 switch (choice)
                 {
@@ -32,6 +47,7 @@ namespace Лаба_11111
                         var title = Console.ReadLine();
                         Console.Write("Автор: ");
                         var author = Console.ReadLine();
+<<<<<<< HEAD
                         Console.Write("Жанр: ");
                         var genre = Console.ReadLine();
                         Console.Write("Рейтинг: ");
@@ -39,6 +55,11 @@ namespace Лаба_11111
                         if (title != "" && author != "" && genre != "")
                         {
                             logic.Add(title, author, genre, raiting);
+=======
+                        if (title != "" && author != "")
+                        {
+                            logic.Add(title, author);
+>>>>>>> b2720782dba29053f1d983004746f08cc76aba74
                         }
                         else
                         {
@@ -58,6 +79,7 @@ namespace Лаба_11111
                         var newTitle = Console.ReadLine();
                         Console.Write("Новый автор: ");
                         var newAuthor = Console.ReadLine();
+<<<<<<< HEAD
                         Console.Write("Новый жанр: ");
                         var newGenre = Console.ReadLine();
                         Console.Write("Новый рейтинг: ");
@@ -67,6 +89,13 @@ namespace Лаба_11111
                     case "4":
                         foreach (var b in logic.GetAll())
                             Console.WriteLine($"ID: {b.Id} | Название: {b.Title} | Автор: {b.Author} | Жанр: {b.Genre} | Рейтинг: {b.Raiting}");
+=======
+                        logic.Update(idUpd, newTitle, newAuthor);
+                        break;
+                    case "4":
+                        foreach (var b in logic.GetAll())
+                            Console.WriteLine($"ID: {b.Id} | Название: {b.Title} | Автор: {b.Author}");
+>>>>>>> b2720782dba29053f1d983004746f08cc76aba74
                         break;
                     case "5":
                         Console.Write("Автор: ");
@@ -77,6 +106,7 @@ namespace Лаба_11111
                             Console.WriteLine($"ID: {b.Id} | Название: {b.Title}");
                         break;
                     case "6":
+<<<<<<< HEAD
                         Console.WriteLine("\nЛучшие книги");
                         foreach (var book in logic.FindFantasyBooks())
                             Console.WriteLine($"Название: {book.Title} | Автор: {book.Author}");
@@ -105,6 +135,8 @@ namespace Лаба_11111
                         }
                         break;
                     case "8":
+=======
+>>>>>>> b2720782dba29053f1d983004746f08cc76aba74
                         foreach (var g in logic.GroupByAuthor())
                             Console.WriteLine(g);
                         break;

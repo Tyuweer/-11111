@@ -4,6 +4,7 @@ C:\Users\aleks\Desktop\project C#\Лаба 11111\DomainModels\obj\Debug\DomainMo
 C:\Users\aleks\Desktop\project C#\Лаба 11111\DomainModels\obj\Debug\DomainModels.csproj.CoreCompileInputs.cache
 C:\Users\aleks\Desktop\project C#\Лаба 11111\DomainModels\obj\Debug\DomainModels.dll
 C:\Users\aleks\Desktop\project C#\Лаба 11111\DomainModels\obj\Debug\DomainModels.pdb
+<<<<<<< HEAD
 C:\Users\kiril\Downloads\-11111-develop\DomainModels\bin\Debug\DomainModels.dll
 C:\Users\kiril\Downloads\-11111-develop\DomainModels\bin\Debug\DomainModels.pdb
 C:\Users\kiril\Downloads\-11111-develop\DomainModels\obj\Debug\DomainModels.csproj.AssemblyReference.cache
@@ -16,3 +17,5 @@ C:\Users\aleks\Desktop\-11111-develop\DomainModels\obj\Debug\DomainModels.csproj
 C:\Users\aleks\Desktop\-11111-develop\DomainModels\obj\Debug\DomainModels.csproj.CoreCompileInputs.cache
 C:\Users\aleks\Desktop\-11111-develop\DomainModels\obj\Debug\DomainModels.dll
 C:\Users\aleks\Desktop\-11111-develop\DomainModels\obj\Debug\DomainModels.pdb
+=======
+>>>>>>> b2720782dba29053f1d983004746f08cc76aba74

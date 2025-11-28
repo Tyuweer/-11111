@@ -9,10 +9,15 @@ namespace ModelLogic
     /// <summary>
     /// Реализация бизнес-логики для работы с книгами
     /// </summary>
+<<<<<<< HEAD
     public class BookLogic : IGenreOperations
     {
         private const string FANTASY_GENRE = "Fantasy";
 
+=======
+    public class BookLogic : IBookLogic
+    {
+>>>>>>> b2720782dba29053f1d983004746f08cc76aba74
         /// <summary>
         /// Инициализирует бизнес-логику с указанным репозиторием
         /// </summary>
@@ -37,17 +42,28 @@ namespace ModelLogic
         /// </summary>
         /// <param name="title">Название книги</param>
         /// <param name="author">Автор книги</param>
+<<<<<<< HEAD
         /// <param name="genre">Жанр книги</param>
         /// <param name="raiting">Рейтинг книги</param>
         /// <returns>True если книга успешно добавлена, False если название или автор пустые</returns>
         public bool Add(string title, string author, string genre,int raiting)
+=======
+        /// <returns>True если книга успешно добавлена, False если название или автор пустые</returns>
+        public bool Add(string title, string author)
+>>>>>>> b2720782dba29053f1d983004746f08cc76aba74
         {
             //String.IsNullOrWhiteSpace() — это метод в C#,
             //который проверяет, является ли строка null, пустой ("") или содержит только пробельные символы 
             //Если одно из этих условий верно, метод возвращает true, в противном случае — false
+<<<<<<< HEAD
             if (!string.IsNullOrWhiteSpace(title) && !string.IsNullOrWhiteSpace(author) && !string.IsNullOrWhiteSpace(genre))
             {
                 _repository.Add(new Book { Title = title, Author = author, Genre = genre, Raiting = raiting });
+=======
+            if (!string.IsNullOrWhiteSpace(title) && !string.IsNullOrWhiteSpace(author))
+            {
+                _repository.Add(new Book { Title = title, Author = author });
+>>>>>>> b2720782dba29053f1d983004746f08cc76aba74
                 return true;
             }
             return false;
@@ -75,6 +91,7 @@ namespace ModelLogic
         /// <param name="id">Идентификатор книги для обновления</param>
         /// <param name="newTitle">Новое название книги</param>
         /// <param name="newAuthor">Новый автор книги</param>
+<<<<<<< HEAD
         /// <param name="newGenre">Новый жанр книги</param>
         /// <param name="newRaiting">Новый рейтинг книги</param>
         /// <returns>True если книга найдена и данные обновлены, False если книга не найдена или данные невалидны</returns>
@@ -87,6 +104,16 @@ namespace ModelLogic
                 book.Author = newAuthor;
                 book.Genre = newGenre;  
                 book.Raiting = newRaiting;
+=======
+        /// <returns>True если книга найдена и данные обновлены, False если книга не найдена или данные невалидны</returns>
+        public bool Update(int id, string newTitle, string newAuthor)
+        {
+            var book = _repository.ReadById(id);
+            if (book != null && !string.IsNullOrWhiteSpace(newTitle) && !string.IsNullOrWhiteSpace(newAuthor))
+            {
+                book.Title = newTitle;
+                book.Author = newAuthor;
+>>>>>>> b2720782dba29053f1d983004746f08cc76aba74
                 _repository.Update(book);
                 return true;
             }
@@ -116,6 +143,7 @@ namespace ModelLogic
                 .Select(g => $"{g.Key}: {g.Count()} книг")
                 .ToList();
         }
+<<<<<<< HEAD
         public List<Book> FindFantasyBooks()
         {
             return _repository.ReadAll()
@@ -129,5 +157,7 @@ namespace ModelLogic
                 .Where(b => b.Raiting == raiting)
                 .ToList();
         }
+=======
+>>>>>>> b2720782dba29053f1d983004746f08cc76aba74
     }
 }

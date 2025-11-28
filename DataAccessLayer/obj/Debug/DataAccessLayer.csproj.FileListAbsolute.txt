@@ -17,6 +17,7 @@ C:\Users\aleks\Desktop\project C#\Лаба 11111\DataAccessLayer\obj\Debug\DataA
 C:\Users\aleks\Desktop\project C#\Лаба 11111\DataAccessLayer\obj\Debug\DataAcce.E67BD773.Up2Date
 C:\Users\aleks\Desktop\project C#\Лаба 11111\DataAccessLayer\obj\Debug\DataAccessLayer.dll
 C:\Users\aleks\Desktop\project C#\Лаба 11111\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+<<<<<<< HEAD
 C:\Users\kiril\Downloads\-11111-develop\DataAccessLayer\bin\Debug\DataAccessLayer.dll
 C:\Users\kiril\Downloads\-11111-develop\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
 C:\Users\kiril\Downloads\-11111-develop\DataAccessLayer\bin\Debug\Dapper.dll
@@ -57,3 +58,5 @@ C:\Users\aleks\Desktop\-11111-develop\DataAccessLayer\obj\Debug\DataAccessLayer.
 C:\Users\aleks\Desktop\-11111-develop\DataAccessLayer\obj\Debug\DataAcce.E67BD773.Up2Date
 C:\Users\aleks\Desktop\-11111-develop\DataAccessLayer\obj\Debug\DataAccessLayer.dll
 C:\Users\aleks\Desktop\-11111-develop\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+=======
+>>>>>>> b2720782dba29053f1d983004746f08cc76aba74

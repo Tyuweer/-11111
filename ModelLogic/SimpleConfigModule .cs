@@ -27,7 +27,11 @@ namespace ModelLogic
             // "Когда кто-то попросит IRepository<Book>, верни ему экземпляр EntityRepository<Book>"
             // InSingletonScope() означает, что будет создан один экземпляр на всё приложение.
             Bind<IRepository<Book>>().To<EntityRepository<Book>>().InSingletonScope();
+<<<<<<< HEAD
             Bind<IGenreOperations>().To<BookLogic>().InSingletonScope();
+=======
+            Bind<IBookLogic>().To<BookLogic>().InSingletonScope();
+>>>>>>> b2720782dba29053f1d983004746f08cc76aba74
 
             // Раскоментировать строку чтобы выбрать реализацию через Даппер
             // Bind<IRepository<Book>>().To<DapperRepository<Book>>().InSingletonScope();
