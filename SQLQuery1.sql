@@ -1,0 +1,17 @@
+﻿INSERT INTO Books (Title, Author, Genre, Raiting) VALUES
+('To Kill a Mockingbird', 'Harper Lee', 'Fiction', 9),
+('1984', 'George Orwell', 'Dystopian', 8),
+('Pride and Prejudice', 'Jane Austen', 'Romance', 8),
+('The Great Gatsby', 'F. Scott Fitzgerald', 'Classic', 7),
+('Harry Potter and the Philosopher''s Stone', 'J.K. Rowling', 'Fantasy', 9),
+('The Lord of the Rings', 'J.R.R. Tolkien', 'Fantasy', 10),
+('The Catcher in the Rye', 'J.D. Salinger', 'Fiction', 7),
+('The Hobbit', 'J.R.R. Tolkien', 'Fantasy', 8),
+('Brave New World', 'Aldous Huxley', 'Dystopian', 8),
+('The Da Vinci Code', 'Dan Brown', 'Mystery', 6),
+('The Alchemist', 'Paulo Coelho', 'Fiction', 7),
+('The Hunger Games', 'Suzanne Collins', 'Dystopian', 8),
+('The Shining', 'Stephen King', 'Horror', 9),
+('Gone Girl', 'Gillian Flynn', 'Thriller', 8),
+('The Girl on the Train', 'Paula Hawkins', 'Mystery', 7),
+('Dune', 'Frank Herbert', 'Science Fiction', 9);
