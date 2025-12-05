@@ -1,6 +1,7 @@
 ﻿using ModelLogic;
 using Ninject;
 using PresenterLayer;
+using Shared;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,10 +26,10 @@ namespace WindowsFormsApp1
 
             IKernel kernel = new StandardKernel(new SimpleConfigModule());
             var mainForm = kernel.Get<Form1>();
-            var logic = kernel.Get<IGenreOperations>();
+            var model = kernel.Get<IModel>();
 
             // СОЗДАЕМ PRESENTER и связываем его с View и Model
-            var presenter = new BookPresenter(mainForm, logic);
+            var presenter = new BookPresenter(mainForm, kernel.Get<IModel>());
 
             Application.Run(mainForm);
         }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using DomainModels;
 using Ninject;
 using ModelLogic;
+using Shared;
 
 namespace Лаба_11111
 {
@@ -19,7 +20,7 @@ namespace Лаба_11111
         {
             IKernel ninjectKernel = new StandardKernel(new SimpleConfigModule());
             
-            var logic = ninjectKernel.Get<IGenreOperations>();
+            var model = ninjectKernel.Get<IModel>();
 
             while (true)
             {
@@ -38,7 +39,7 @@ namespace Лаба_11111
                         var raiting = Convert.ToInt32(Console.ReadLine());
                         if (title != "" && author != "" && genre != "")
                         {
-                            logic.Add(title, author, genre, raiting);
+                            model.Add(title, author, genre, raiting);
                         }
                         else
                         {
@@ -49,8 +50,15 @@ namespace Лаба_11111
                     case "2":
                         Console.Write("ID: ");
                         int.TryParse(Console.ReadLine(), out int idDel);
-                        logic.Delete(idDel);
-                        break;
+                        if (model.Delete(idDel))
+                        {
+                            Console.WriteLine("Книга успешно удалена!");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Ошибка удаления!");
+                        }
+                            break;
                     case "3":
                         Console.Write("ID: ");
                         int.TryParse(Console.ReadLine(), out int idUpd);
@@ -62,30 +70,30 @@ namespace Лаба_11111
                         var newGenre = Console.ReadLine();
                         Console.Write("Новый рейтинг: ");
                         var newRaiting = Convert.ToInt32(Console.ReadLine());
-                        logic.Update(idUpd, newTitle, newAuthor,newGenre, newRaiting);
+                        model.Update(idUpd, newTitle, newAuthor,newGenre, newRaiting);
                         break;
                     case "4":
-                        foreach (var b in logic.GetAll())
+                        foreach (var b in model.GetAll())
                             Console.WriteLine($"ID: {b.Id} | Название: {b.Title} | Автор: {b.Author} | Жанр: {b.Genre} | Рейтинг: {b.Raiting}");
                         break;
                     case "5":
                         Console.Write("Автор: ");
                         var findAuthor = Console.ReadLine();
                         Console.WriteLine($"Книги автора: {findAuthor}");
-                        foreach (var b in logic.FindByAuthor(findAuthor))
+                        foreach (var b in model.FindByAuthor(findAuthor))
                          
                             Console.WriteLine($"ID: {b.Id} | Название: {b.Title}");
                         break;
                     case "6":
                         Console.WriteLine("\nЛучшие книги");
-                        foreach (var book in logic.FindFantasyBooks())
+                        foreach (var book in model.FindFantasyBooks())
                             Console.WriteLine($"Название: {book.Title} | Автор: {book.Author}");
                         break;
                     case "7":
                         Console.WriteLine("Рейтинг: ");
                         if (int.TryParse(Console.ReadLine(), out int Raiting))
                         {
-                            var findRaitingBooks = logic.FindRaitingBooks(Raiting);
+                            var findRaitingBooks = model.FindRaitingBooks(Raiting);
                             if (findRaitingBooks.Any())
                             {
                                 Console.WriteLine($"Книги с рейтингом {Raiting}:");
@@ -105,7 +113,7 @@ namespace Лаба_11111
                         }
                         break;
                     case "8":
-                        foreach (var g in logic.GroupByAuthor())
+                        foreach (var g in model.GroupByAuthor())
                             Console.WriteLine(g);
                         break;
                     case "0":

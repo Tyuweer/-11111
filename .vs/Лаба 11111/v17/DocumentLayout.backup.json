@@ -3,84 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\aleks\\Desktop\\-11111-develop\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{DF30BE0A-2767-40C6-AFB4-45EEAAC8F893}|WindowsFormsApp1\\WindowsFormsApp.csproj|c:\\users\\aleks\\desktop\\-11111-develop\\windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DF30BE0A-2767-40C6-AFB4-45EEAAC8F893}|WindowsFormsApp1\\WindowsFormsApp.csproj|solutionrelative:windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF30BE0A-2767-40C6-AFB4-45EEAAC8F893}|WindowsFormsApp1\\WindowsFormsApp.csproj|c:\\users\\aleks\\desktop\\-11111-develop\\windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DF30BE0A-2767-40C6-AFB4-45EEAAC8F893}|WindowsFormsApp1\\WindowsFormsApp.csproj|solutionrelative:windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DBDFF13-4D31-4D24-A850-08C43AA9F024}|ModelLogic\\ModelLogic.csproj|c:\\users\\aleks\\desktop\\-11111-develop\\modellogic\\booklogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DBDFF13-4D31-4D24-A850-08C43AA9F024}|ModelLogic\\ModelLogic.csproj|solutionrelative:modellogic\\booklogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{94148F06-E2D1-4D78-ADBB-007395A6E162}|PresenterLayer\\PresenterLayer.csproj|c:\\users\\aleks\\desktop\\-11111-develop\\presenterlayer\\bookpresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{94148F06-E2D1-4D78-ADBB-007395A6E162}|PresenterLayer\\PresenterLayer.csproj|solutionrelative:presenterlayer\\bookpresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{993D1D56-C3C1-4C23-BBD4-D405DF52111A}|Sared\\Shared.csproj|C:\\Users\\aleks\\Desktop\\-11111-develop\\sared\\iview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{993D1D56-C3C1-4C23-BBD4-D405DF52111A}|Sared\\Shared.csproj|solutionrelative:sared\\iview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6C395025-A105-4A83-A988-EA391A441D17}|DomainModels\\DomainModels.csproj|C:\\Users\\aleks\\Desktop\\-11111-develop\\domainmodels\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6C395025-A105-4A83-A988-EA391A441D17}|DomainModels\\DomainModels.csproj|solutionrelative:domainmodels\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6C395025-A105-4A83-A988-EA391A441D17}|DomainModels\\DomainModels.csproj|C:\\Users\\aleks\\Desktop\\-11111-develop\\domainmodels\\idomainobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6C395025-A105-4A83-A988-EA391A441D17}|DomainModels\\DomainModels.csproj|solutionrelative:domainmodels\\idomainobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DF30BE0A-2767-40C6-AFB4-45EEAAC8F893}|WindowsFormsApp1\\WindowsFormsApp.csproj|C:\\Users\\aleks\\Desktop\\-11111-develop\\windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DF30BE0A-2767-40C6-AFB4-45EEAAC8F893}|WindowsFormsApp1\\WindowsFormsApp.csproj|solutionrelative:windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8DBDFF13-4D31-4D24-A850-08C43AA9F024}|ModelLogic\\ModelLogic.csproj|C:\\Users\\aleks\\Desktop\\-11111-develop\\modellogic\\booklogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DBDFF13-4D31-4D24-A850-08C43AA9F024}|ModelLogic\\ModelLogic.csproj|solutionrelative:modellogic\\booklogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DF30BE0A-2767-40C6-AFB4-45EEAAC8F893}|WindowsFormsApp1\\WindowsFormsApp.csproj|C:\\Users\\aleks\\Desktop\\-11111-develop\\windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{DF30BE0A-2767-40C6-AFB4-45EEAAC8F893}|WindowsFormsApp1\\WindowsFormsApp.csproj|solutionrelative:windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{013BF96A-3413-46D9-B2D1-4BB7BD94D891}|DataAccessLayer\\DataAccessLayer.csproj|C:\\Users\\aleks\\Desktop\\-11111-develop\\dataaccesslayer\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{013BF96A-3413-46D9-B2D1-4BB7BD94D891}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DF30BE0A-2767-40C6-AFB4-45EEAAC8F893}|WindowsFormsApp1\\WindowsFormsApp.csproj|C:\\Users\\aleks\\Desktop\\-11111-develop\\windowsformsapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DF30BE0A-2767-40C6-AFB4-45EEAAC8F893}|WindowsFormsApp1\\WindowsFormsApp.csproj|solutionrelative:windowsformsapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{013BF96A-3413-46D9-B2D1-4BB7BD94D891}|DataAccessLayer\\DataAccessLayer.csproj|C:\\Users\\aleks\\Desktop\\-11111-develop\\dataaccesslayer\\databaseconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{013BF96A-3413-46D9-B2D1-4BB7BD94D891}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\databaseconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9F4BA15B-D847-40BF-9629-37ACCE994516}|\u041B\u0430\u0431\u0430 11111\\ConsolApp.csproj|C:\\Users\\aleks\\Desktop\\-11111-develop\\\u043B\u0430\u0431\u0430 11111\\consoleapp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9F4BA15B-D847-40BF-9629-37ACCE994516}|\u041B\u0430\u0431\u0430 11111\\ConsolApp.csproj|c:\\users\\aleks\\desktop\\-11111-develop\\\u043B\u0430\u0431\u0430 11111\\consoleapp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9F4BA15B-D847-40BF-9629-37ACCE994516}|\u041B\u0430\u0431\u0430 11111\\ConsolApp.csproj|solutionrelative:\u043B\u0430\u0431\u0430 11111\\consoleapp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8DBDFF13-4D31-4D24-A850-08C43AA9F024}|ModelLogic\\ModelLogic.csproj|C:\\Users\\aleks\\Desktop\\-11111-develop\\modellogic\\simpleconfigmodule .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DBDFF13-4D31-4D24-A850-08C43AA9F024}|ModelLogic\\ModelLogic.csproj|solutionrelative:modellogic\\simpleconfigmodule .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{993D1D56-C3C1-4C23-BBD4-D405DF52111A}|Sared\\Shared.csproj|c:\\users\\aleks\\desktop\\-11111-develop\\sared\\iview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{993D1D56-C3C1-4C23-BBD4-D405DF52111A}|Sared\\Shared.csproj|solutionrelative:sared\\iview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8DBDFF13-4D31-4D24-A850-08C43AA9F024}|ModelLogic\\ModelLogic.csproj|C:\\Users\\aleks\\Desktop\\-11111-develop\\modellogic\\igenreoperations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DBDFF13-4D31-4D24-A850-08C43AA9F024}|ModelLogic\\ModelLogic.csproj|solutionrelative:modellogic\\igenreoperations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{993D1D56-C3C1-4C23-BBD4-D405DF52111A}|Sared\\Shared.csproj|c:\\users\\aleks\\desktop\\-11111-develop\\sared\\imodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{993D1D56-C3C1-4C23-BBD4-D405DF52111A}|Sared\\Shared.csproj|solutionrelative:sared\\imodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8DBDFF13-4D31-4D24-A850-08C43AA9F024}|ModelLogic\\ModelLogic.csproj|C:\\Users\\aleks\\Desktop\\-11111-develop\\modellogic\\ibookquerylogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DBDFF13-4D31-4D24-A850-08C43AA9F024}|ModelLogic\\ModelLogic.csproj|solutionrelative:modellogic\\ibookquerylogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8DBDFF13-4D31-4D24-A850-08C43AA9F024}|ModelLogic\\ModelLogic.csproj|C:\\Users\\aleks\\Desktop\\-11111-develop\\modellogic\\ibooklogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DBDFF13-4D31-4D24-A850-08C43AA9F024}|ModelLogic\\ModelLogic.csproj|solutionrelative:modellogic\\ibooklogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8DBDFF13-4D31-4D24-A850-08C43AA9F024}|ModelLogic\\ModelLogic.csproj|C:\\Users\\aleks\\Desktop\\-11111-develop\\modellogic\\ibookcommandlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DBDFF13-4D31-4D24-A850-08C43AA9F024}|ModelLogic\\ModelLogic.csproj|solutionrelative:modellogic\\ibookcommandlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{013BF96A-3413-46D9-B2D1-4BB7BD94D891}|DataAccessLayer\\DataAccessLayer.csproj|C:\\Users\\aleks\\Desktop\\-11111-develop\\dataaccesslayer\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{013BF96A-3413-46D9-B2D1-4BB7BD94D891}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{013BF96A-3413-46D9-B2D1-4BB7BD94D891}|DataAccessLayer\\DataAccessLayer.csproj|C:\\Users\\aleks\\Desktop\\-11111-develop\\dataaccesslayer\\entityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{013BF96A-3413-46D9-B2D1-4BB7BD94D891}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\entityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{013BF96A-3413-46D9-B2D1-4BB7BD94D891}|DataAccessLayer\\DataAccessLayer.csproj|C:\\Users\\aleks\\Desktop\\-11111-develop\\dataaccesslayer\\databaseinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{013BF96A-3413-46D9-B2D1-4BB7BD94D891}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\databaseinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{013BF96A-3413-46D9-B2D1-4BB7BD94D891}|DataAccessLayer\\DataAccessLayer.csproj|C:\\Users\\aleks\\Desktop\\-11111-develop\\dataaccesslayer\\dapperrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{013BF96A-3413-46D9-B2D1-4BB7BD94D891}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\dapperrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DF30BE0A-2767-40C6-AFB4-45EEAAC8F893}|WindowsFormsApp1\\WindowsFormsApp.csproj|c:\\users\\aleks\\desktop\\-11111-develop\\windowsformsapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DF30BE0A-2767-40C6-AFB4-45EEAAC8F893}|WindowsFormsApp1\\WindowsFormsApp.csproj|solutionrelative:windowsformsapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -90,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -106,243 +58,106 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "DocumentMoniker": "C:\\Users\\aleks\\Desktop\\-11111-develop\\WindowsFormsApp1\\Form1.cs",
-              "RelativeDocumentMoniker": "WindowsFormsApp1\\Form1.cs",
-              "ToolTip": "C:\\Users\\aleks\\Desktop\\-11111-develop\\WindowsFormsApp1\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "RelativeToolTip": "WindowsFormsApp1\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T07:15:56.168Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\aleks\\Desktop\\-11111-develop\\WindowsFormsApp1\\Form1.cs",
-              "RelativeDocumentMoniker": "WindowsFormsApp1\\Form1.cs",
-              "ToolTip": "C:\\Users\\aleks\\Desktop\\-11111-develop\\WindowsFormsApp1\\Form1.cs",
-              "RelativeToolTip": "WindowsFormsApp1\\Form1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T07:06:34.456Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "IView.cs",
-              "DocumentMoniker": "C:\\Users\\aleks\\Desktop\\-11111-develop\\Sared\\IView.cs",
-              "RelativeDocumentMoniker": "Sared\\IView.cs",
-              "ToolTip": "C:\\Users\\aleks\\Desktop\\-11111-develop\\Sared\\IView.cs",
-              "RelativeToolTip": "Sared\\IView.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T07:06:26.782Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "BookPresenter.cs",
-              "DocumentMoniker": "C:\\Users\\aleks\\Desktop\\-11111-develop\\PresenterLayer\\BookPresenter.cs",
-              "RelativeDocumentMoniker": "PresenterLayer\\BookPresenter.cs",
-              "ToolTip": "C:\\Users\\aleks\\Desktop\\-11111-develop\\PresenterLayer\\BookPresenter.cs",
-              "RelativeToolTip": "PresenterLayer\\BookPresenter.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T07:06:23.941Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "SimpleConfigModule .cs",
-              "DocumentMoniker": "C:\\Users\\aleks\\Desktop\\-11111-develop\\ModelLogic\\SimpleConfigModule .cs",
-              "RelativeDocumentMoniker": "ModelLogic\\SimpleConfigModule .cs",
-              "ToolTip": "C:\\Users\\aleks\\Desktop\\-11111-develop\\ModelLogic\\SimpleConfigModule .cs",
-              "RelativeToolTip": "ModelLogic\\SimpleConfigModule .cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T07:06:21.389Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "IGenreOperations.cs",
-              "DocumentMoniker": "C:\\Users\\aleks\\Desktop\\-11111-develop\\ModelLogic\\IGenreOperations.cs",
-              "RelativeDocumentMoniker": "ModelLogic\\IGenreOperations.cs",
-              "ToolTip": "C:\\Users\\aleks\\Desktop\\-11111-develop\\ModelLogic\\IGenreOperations.cs",
-              "RelativeToolTip": "ModelLogic\\IGenreOperations.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T07:06:20.776Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "IBookQueryLogic.cs",
-              "DocumentMoniker": "C:\\Users\\aleks\\Desktop\\-11111-develop\\ModelLogic\\IBookQueryLogic.cs",
-              "RelativeDocumentMoniker": "ModelLogic\\IBookQueryLogic.cs",
-              "ToolTip": "C:\\Users\\aleks\\Desktop\\-11111-develop\\ModelLogic\\IBookQueryLogic.cs",
-              "RelativeToolTip": "ModelLogic\\IBookQueryLogic.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T07:06:20.26Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "IBookLogic.cs",
-              "DocumentMoniker": "C:\\Users\\aleks\\Desktop\\-11111-develop\\ModelLogic\\IBookLogic.cs",
-              "RelativeDocumentMoniker": "ModelLogic\\IBookLogic.cs",
-              "ToolTip": "C:\\Users\\aleks\\Desktop\\-11111-develop\\ModelLogic\\IBookLogic.cs",
-              "RelativeToolTip": "ModelLogic\\IBookLogic.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T07:06:19.747Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "IBookCommandLogic.cs",
-              "DocumentMoniker": "C:\\Users\\aleks\\Desktop\\-11111-develop\\ModelLogic\\IBookCommandLogic.cs",
-              "RelativeDocumentMoniker": "ModelLogic\\IBookCommandLogic.cs",
-              "ToolTip": "C:\\Users\\aleks\\Desktop\\-11111-develop\\ModelLogic\\IBookCommandLogic.cs",
-              "RelativeToolTip": "ModelLogic\\IBookCommandLogic.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T07:06:19.24Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "BookLogic.cs",
-              "DocumentMoniker": "C:\\Users\\aleks\\Desktop\\-11111-develop\\ModelLogic\\BookLogic.cs",
-              "RelativeDocumentMoniker": "ModelLogic\\BookLogic.cs",
-              "ToolTip": "C:\\Users\\aleks\\Desktop\\-11111-develop\\ModelLogic\\BookLogic.cs",
-              "RelativeToolTip": "ModelLogic\\BookLogic.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T07:06:18.744Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IDomainObject.cs",
-              "DocumentMoniker": "C:\\Users\\aleks\\Desktop\\-11111-develop\\DomainModels\\IDomainObject.cs",
-              "RelativeDocumentMoniker": "DomainModels\\IDomainObject.cs",
-              "ToolTip": "C:\\Users\\aleks\\Desktop\\-11111-develop\\DomainModels\\IDomainObject.cs",
-              "RelativeToolTip": "DomainModels\\IDomainObject.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T07:06:16.779Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Book.cs",
-              "DocumentMoniker": "C:\\Users\\aleks\\Desktop\\-11111-develop\\DomainModels\\Book.cs",
-              "RelativeDocumentMoniker": "DomainModels\\Book.cs",
-              "ToolTip": "C:\\Users\\aleks\\Desktop\\-11111-develop\\DomainModels\\Book.cs",
-              "RelativeToolTip": "DomainModels\\Book.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T07:06:16.103Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "IRepository.cs",
-              "DocumentMoniker": "C:\\Users\\aleks\\Desktop\\-11111-develop\\DataAccessLayer\\IRepository.cs",
-              "RelativeDocumentMoniker": "DataAccessLayer\\IRepository.cs",
-              "ToolTip": "C:\\Users\\aleks\\Desktop\\-11111-develop\\DataAccessLayer\\IRepository.cs",
-              "RelativeToolTip": "DataAccessLayer\\IRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T07:06:13.559Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "EntityRepository.cs",
-              "DocumentMoniker": "C:\\Users\\aleks\\Desktop\\-11111-develop\\DataAccessLayer\\EntityRepository.cs",
-              "RelativeDocumentMoniker": "DataAccessLayer\\EntityRepository.cs",
-              "ToolTip": "C:\\Users\\aleks\\Desktop\\-11111-develop\\DataAccessLayer\\EntityRepository.cs",
-              "RelativeToolTip": "DataAccessLayer\\EntityRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T07:06:13.047Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "DatabaseInitializer.cs",
-              "DocumentMoniker": "C:\\Users\\aleks\\Desktop\\-11111-develop\\DataAccessLayer\\DatabaseInitializer.cs",
-              "RelativeDocumentMoniker": "DataAccessLayer\\DatabaseInitializer.cs",
-              "ToolTip": "C:\\Users\\aleks\\Desktop\\-11111-develop\\DataAccessLayer\\DatabaseInitializer.cs",
-              "RelativeToolTip": "DataAccessLayer\\DatabaseInitializer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T07:06:12.557Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "DatabaseConfig.cs",
-              "DocumentMoniker": "C:\\Users\\aleks\\Desktop\\-11111-develop\\DataAccessLayer\\DatabaseConfig.cs",
-              "RelativeDocumentMoniker": "DataAccessLayer\\DatabaseConfig.cs",
-              "ToolTip": "C:\\Users\\aleks\\Desktop\\-11111-develop\\DataAccessLayer\\DatabaseConfig.cs",
-              "RelativeToolTip": "DataAccessLayer\\DatabaseConfig.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T07:06:12.097Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "DapperRepository.cs",
-              "DocumentMoniker": "C:\\Users\\aleks\\Desktop\\-11111-develop\\DataAccessLayer\\DapperRepository.cs",
-              "RelativeDocumentMoniker": "DataAccessLayer\\DapperRepository.cs",
-              "ToolTip": "C:\\Users\\aleks\\Desktop\\-11111-develop\\DataAccessLayer\\DapperRepository.cs",
-              "RelativeToolTip": "DataAccessLayer\\DapperRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T07:06:11.555Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\aleks\\Desktop\\-11111-develop\\DataAccessLayer\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "DataAccessLayer\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\aleks\\Desktop\\-11111-develop\\DataAccessLayer\\AppDbContext.cs",
-              "RelativeToolTip": "DataAccessLayer\\AppDbContext.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T07:06:10.984Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
               "Title": "ConsoleApp.cs",
               "DocumentMoniker": "C:\\Users\\aleks\\Desktop\\-11111-develop\\\u041B\u0430\u0431\u0430 11111\\ConsoleApp.cs",
               "RelativeDocumentMoniker": "\u041B\u0430\u0431\u0430 11111\\ConsoleApp.cs",
               "ToolTip": "C:\\Users\\aleks\\Desktop\\-11111-develop\\\u041B\u0430\u0431\u0430 11111\\ConsoleApp.cs",
               "RelativeToolTip": "\u041B\u0430\u0431\u0430 11111\\ConsoleApp.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADYAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T07:06:01.363Z"
+              "WhenOpened": "2025-12-05T05:28:27.468Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\aleks\\Desktop\\-11111-develop\\WindowsFormsApp1\\Program.cs",
               "RelativeDocumentMoniker": "WindowsFormsApp1\\Program.cs",
               "ToolTip": "C:\\Users\\aleks\\Desktop\\-11111-develop\\WindowsFormsApp1\\Program.cs",
               "RelativeToolTip": "WindowsFormsApp1\\Program.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAwCEAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAWwBcAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T07:05:57.078Z"
+              "WhenOpened": "2025-12-05T05:26:24.137Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IView.cs",
+              "DocumentMoniker": "C:\\Users\\aleks\\Desktop\\-11111-develop\\Sared\\IView.cs",
+              "RelativeDocumentMoniker": "Sared\\IView.cs",
+              "ToolTip": "C:\\Users\\aleks\\Desktop\\-11111-develop\\Sared\\IView.cs",
+              "RelativeToolTip": "Sared\\IView.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAswCQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T05:25:57.526Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BookPresenter.cs",
+              "DocumentMoniker": "C:\\Users\\aleks\\Desktop\\-11111-develop\\PresenterLayer\\BookPresenter.cs",
+              "RelativeDocumentMoniker": "PresenterLayer\\BookPresenter.cs",
+              "ToolTip": "C:\\Users\\aleks\\Desktop\\-11111-develop\\PresenterLayer\\BookPresenter.cs",
+              "RelativeToolTip": "PresenterLayer\\BookPresenter.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAqwGgAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T05:20:36.039Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IModel.cs",
+              "DocumentMoniker": "C:\\Users\\aleks\\Desktop\\-11111-develop\\Sared\\IModel.cs",
+              "RelativeDocumentMoniker": "Sared\\IModel.cs",
+              "ToolTip": "C:\\Users\\aleks\\Desktop\\-11111-develop\\Sared\\IModel.cs",
+              "RelativeToolTip": "Sared\\IModel.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T05:19:59.065Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BookLogic.cs",
+              "DocumentMoniker": "C:\\Users\\aleks\\Desktop\\-11111-develop\\ModelLogic\\BookLogic.cs",
+              "RelativeDocumentMoniker": "ModelLogic\\BookLogic.cs",
+              "ToolTip": "C:\\Users\\aleks\\Desktop\\-11111-develop\\ModelLogic\\BookLogic.cs",
+              "RelativeToolTip": "ModelLogic\\BookLogic.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAwwDcAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T05:19:56.35Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\aleks\\Desktop\\-11111-develop\\WindowsFormsApp1\\Form1.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\Form1.cs",
+              "ToolTip": "C:\\Users\\aleks\\Desktop\\-11111-develop\\WindowsFormsApp1\\Form1.cs*",
+              "RelativeToolTip": "WindowsFormsApp1\\Form1.cs*",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAAwFkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T05:19:31.987Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "C:\\Users\\aleks\\Desktop\\-11111-develop\\WindowsFormsApp1\\Form1.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\Form1.cs",
+              "ToolTip": "C:\\Users\\aleks\\Desktop\\-11111-develop\\WindowsFormsApp1\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]*",
+              "RelativeToolTip": "WindowsFormsApp1\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T05:19:20.544Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
             }
           ]
         }

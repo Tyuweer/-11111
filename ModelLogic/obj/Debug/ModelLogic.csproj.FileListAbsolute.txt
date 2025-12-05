@@ -98,3 +98,5 @@ C:\Users\aleks\Desktop\-11111-develop\ModelLogic\obj\Debug\ModelLogic.csproj.Cor
 C:\Users\aleks\Desktop\-11111-develop\ModelLogic\obj\Debug\ModelLogic.csproj.Up2Date
 C:\Users\aleks\Desktop\-11111-develop\ModelLogic\obj\Debug\ModelLogic.dll
 C:\Users\aleks\Desktop\-11111-develop\ModelLogic\obj\Debug\ModelLogic.pdb
+C:\Users\aleks\Desktop\-11111-develop\ModelLogic\bin\Debug\Sared.dll
+C:\Users\aleks\Desktop\-11111-develop\ModelLogic\bin\Debug\Sared.pdb

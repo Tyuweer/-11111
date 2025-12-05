@@ -14,7 +14,7 @@ namespace WindowsFormsApp1
     /// </summary>
     public partial class Form1 : Form, IView
     {
-        // ===== События MVP =====
+
         public event Action AddBookClicked;
         public event Action UpdateBookClicked;
         public event Action DeleteBookClicked;
@@ -22,28 +22,24 @@ namespace WindowsFormsApp1
         public event Action FindByAuthorClicked;
         public event Action FindFantasyClicked;
         public event Action FindRatingClicked;
+        public event Action<int> SortRequested;
+        public event Action GroupByAuthorClicked;
 
-        // ===== Свойства View, читаемые Presenter-ом =====
         public string TitleInput => txtTitle.Text;
         public string AuthorInput => txtAuthor.Text;
         public string GenreInput => txtGenre.Text;
         public int RatingInput => int.TryParse(txtRaiting.Text, out int r) ? r : 0;
 
         public int SelectedBookId =>
-            dataGridViewBooks.SelectedRows.Count == 0
-            ? -1
-            : (int)dataGridViewBooks.SelectedRows[0].Cells["Id"].Value;
-
+dataGridViewBooks.SelectedRows.Count == 0
+    ? -1
+    : Convert.ToInt32(dataGridViewBooks.SelectedRows[0].Cells[0].Value);
 
         public Form1()
         {
             InitializeComponent();
             SetupDataGridView();
         }
-
-        // ===========================
-        //      DISPLAY + UI
-        // ===========================
 
         public void DisplayBooks(IEnumerable<Book> books)
         {
@@ -70,13 +66,8 @@ namespace WindowsFormsApp1
             dataGridViewBooks.AllowUserToAddRows = false;
             dataGridViewBooks.RowHeadersVisible = false;
             dataGridViewBooks.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
             dataGridViewBooks.ContextMenuStrip = contextMenuSortFilter;
         }
-
-        // ===========================
-        //      HANDLERS -> EVENTS
-        // ===========================
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
@@ -97,20 +88,10 @@ namespace WindowsFormsApp1
         {
             LoadBooksClicked?.Invoke();
         }
-
-        private void btnBest_Click(object sender, EventArgs e)
-        {
-            FindFantasyClicked?.Invoke();
-        }
-
         private void Btn_Raiting_Click(object sender, EventArgs e)
         {
             FindRatingClicked?.Invoke();
         }
-
-        // ===========================
-        //          SORTING
-        // ===========================
 
         private void SortAToZToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -132,42 +113,87 @@ namespace WindowsFormsApp1
         {
             dataGridViewBooks.SelectAll();
         }
-
-
-        /// <summary>
-        /// Обработчик изменения выбранной сортировки
-        /// (Presenter сделает сортировку сам)
-        /// </summary>
         private void ComboBoxSort_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Генерируем событие сортировки по авторам
-            if (comboBoxSort.SelectedIndex == 2 || comboBoxSort.SelectedIndex == 3)
-                FindByAuthorClicked?.Invoke();
+            SortRequested?.Invoke(comboBoxSort.SelectedIndex);
+            if (comboBoxSort.SelectedIndex == 6)
+            {
+                dataGridViewBooks.SelectAll();
+            }
         }
+       
 
-
-        // ===========================
-        //   GROUPING (остаётся UI)
-        // ===========================
-
-        private void BtnGroup_Click(object sender, EventArgs e)
-        {
-            // Presenter предоставит данные
-            FindByAuthorClicked?.Invoke();
-        }
-
-        // ===========================
-        //   ОБНОВЛЕНИЕ В РЕЖИМЕ FORM
-        // ===========================
-
-        // Presenter вызывает этот метод,
-        // чтобы форма вошла в "режим редактирования"
         public void FillFieldsForEdit(Book book)
         {
             txtTitle.Text = book.Title;
             txtAuthor.Text = book.Author;
             txtGenre.Text = book.Genre;
             txtRaiting.Text = book.Raiting.ToString();
+        }
+        public void ClearInputs()
+        {
+            txtTitle.Clear();
+            txtAuthor.Clear();
+            txtGenre.Clear();
+            txtRaiting.Clear();
+        }
+        public void EnterEditMode(Book book)
+        {
+            txtTitle.Text = book.Title;
+            txtAuthor.Text = book.Author;
+            txtGenre.Text = book.Genre;
+            txtRaiting.Text = book.Raiting.ToString();
+        }
+        public int SelectedRowsCount => dataGridViewBooks.SelectedRows.Count;
+        public void SetUpdateButtonText(string text)
+        {
+            btnUpdate.Text = text;
+        }
+        public void DisplayGroupedView(List<string> authorGroups, List<Book> allBooks)
+        {
+            dataGridViewBooks.Rows.Clear();
+
+            // Группируем книги по авторам (для подгрупп)
+            var booksByAuthor = allBooks
+                .GroupBy(b => b.Author)
+                .ToDictionary(g => g.Key, g => g.OrderBy(b => b.Title).ToList());
+
+            foreach (var group in authorGroups)
+            {
+                var parts = group.Split(':');
+                string author = parts[0].Trim();
+                string count = parts[1].Trim();
+
+                int headerRow = dataGridViewBooks.Rows.Add();
+                var header = dataGridViewBooks.Rows[headerRow];
+                header.Cells[1].Value = author;
+                header.Cells[3].Value = count;
+                header.DefaultCellStyle.Font = new Font(dataGridViewBooks.Font, FontStyle.Bold);
+                header.DefaultCellStyle.BackColor = Color.FromArgb(220, 230, 255);
+                header.DefaultCellStyle.ForeColor = Color.DarkBlue;
+                header.ReadOnly = true;
+                header.Selected = false;
+
+                if (booksByAuthor.TryGetValue(author, out var books))
+                {
+                    foreach (var book in books)
+                    {
+                        int bookRow = dataGridViewBooks.Rows.Add(
+                            book.Id,
+                            "    " + book.Title,
+                            book.Author,
+                            book.Genre,
+                            book.Raiting
+                        );
+                        var row = dataGridViewBooks.Rows[bookRow];
+                        row.DefaultCellStyle.Font = new Font(dataGridViewBooks.Font, FontStyle.Regular);
+                    }
+                }
+            }
+        }
+        private void btnGroupByAuthor_Click(object sender, EventArgs e)
+        {
+            GroupByAuthorClicked?.Invoke();
         }
     }
 }

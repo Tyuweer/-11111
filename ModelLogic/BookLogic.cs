@@ -3,13 +3,14 @@ using DomainModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Shared;
 
 namespace ModelLogic
 {
     /// <summary>
     /// Реализация бизнес-логики для работы с книгами
     /// </summary>
-    public class BookLogic : IGenreOperations
+    public class BookLogic : IModel
     {
         private const string FANTASY_GENRE = "Fantasy";
 
@@ -31,6 +32,32 @@ namespace ModelLogic
         /// </summary>
         /// <returns>Список всех книг</returns>
         public List<Book> GetAll() => _repository.ReadAll().ToList();
+        public List<Book> GetAllSorted(int sortType)
+        {
+            var books = GetAll();
+
+            switch (sortType)
+            {
+                case 0:
+                    return books.OrderBy(b => b.Title).ToList();
+                case 1:
+                    return books.OrderByDescending(b => b.Title).ToList();
+                case 2:
+                    return books.OrderBy(b => b.Author).ToList();
+                case 3:
+                    return books.OrderByDescending(b => b.Author).ToList();
+                case 4:
+                    return books.OrderBy(b => b.Id).ToList();
+                case 5:
+                    return books.OrderByDescending(b => b.Id).ToList();
+                case 7:
+                    return books;
+                case 8:
+                    return FindFantasyBooks();
+                default:
+                    return books;
+            }
+        }
 
         /// <summary>
         /// Добавляет новую книгу после проверки валидности данных

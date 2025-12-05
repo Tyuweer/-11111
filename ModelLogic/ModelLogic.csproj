@@ -63,6 +63,10 @@
       <Project>{6c395025-a105-4a83-a988-ea391a441d17}</Project>
       <Name>DomainModels</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Sared\Shared.csproj">
+      <Project>{993d1d56-c3c1-4c23-bbd4-d405df52111a}</Project>
+      <Name>Shared</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

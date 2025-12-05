@@ -2,6 +2,7 @@
 using DomainModels;
 using Ninject;
 using Ninject.Modules;
+using Shared;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,7 +28,7 @@ namespace ModelLogic
             // "Когда кто-то попросит IRepository<Book>, верни ему экземпляр EntityRepository<Book>"
             // InSingletonScope() означает, что будет создан один экземпляр на всё приложение.
             Bind<IRepository<Book>>().To<EntityRepository<Book>>().InSingletonScope();
-            Bind<IGenreOperations>().To<BookLogic>().InSingletonScope();
+            Bind<IModel>().To<BookLogic>().InSingletonScope();
 
             // Раскоментировать строку чтобы выбрать реализацию через Даппер
             // Bind<IRepository<Book>>().To<DapperRepository<Book>>().InSingletonScope();
