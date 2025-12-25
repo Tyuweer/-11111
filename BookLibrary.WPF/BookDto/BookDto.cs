@@ -20,6 +20,7 @@ public class BookDto : ViewModelBase
     private string _author = string.Empty;
     private string _genre = string.Empty;
     private int _raiting;
+    public string AuthorForGrouping => Author;
 
     // Свойства с поддержкой уведомлений.
     // При изменении любого свойства UI (например, DataGrid) автоматически обновится.

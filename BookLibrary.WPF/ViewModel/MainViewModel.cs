@@ -1,21 +1,9 @@
-﻿// MainViewModel.cs
-//
-// Основной ViewModel для главного окна.
-// Реализует всю логику взаимодействия между UI (View) и бизнес-слоем (Model + BusinessLogic).
-// Соответствует пункту 3 задания: "в Presenter'е создайте ViewModel".
-//
-// Содержит:
-//   - ObservableCollection<BookDto> — привязывается к DataGrid.
-//   - BookDto SelectedBook — текущая выбранная строка.
-//   - string InputXXX — поля ввода для добавления/поиска.
-//   - ICommand команды — для привязки кнопок.
-//   - Методы, вызывающие _logic (бизнес-логику), но **работающие только с BookDto**.
-//
-// ВСЯ логика UI находится здесь — CodeBehind пуст (пункт 1 задания).
+﻿// ViewModel/MainViewModel.cs
 
 using DataAccessLayer;
 using DomainModels;
 using ModelLogic;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
@@ -27,45 +15,36 @@ namespace BookLibrary.WPF.ViewModel
 {
     public class MainViewModel : ViewModelBase
     {
-        
         private readonly IGenreOperations _logic;
-
-        // Коллекция книг для отображения в DataGrid.
         private ObservableCollection<BookDto> _books;
-        // Выбранная книга (для удаления/обновления).
         private BookDto _selectedBook;
+        private ObservableCollection<BookDto> _selectedBooks = new();
 
-        // Поля ввода, привязанные к TextBox'ам.
+        // Поля ввода
         private string _inputTitle = "";
         private string _inputAuthor = "";
         private string _inputGenre = "";
         private string _inputRaiting = "";
 
-        // Команды для привязки к кнопкам в XAML.
+        // Настройки экспорта
+        private bool _isJsonPretty = true;
+        private bool _isIdChecked = true;
+        private bool _isTitleChecked = true;
+        private bool _isAuthorChecked = true;
+        private bool _isGenreChecked = false;
+        private bool _isRaitingChecked = false;
+
+        // Команды
         public ICommand AddBookCommand { get; }
         public ICommand DeleteBookCommand { get; }
         public ICommand UpdateBookCommand { get; }
-        public ICommand FindByAuthorCommand { get; }
         public ICommand GroupByAuthorCommand { get; }
         public ICommand FindFantasyBooksCommand { get; }
         public ICommand ExportToCsvCommand { get; }
         public ICommand ExportToJsonCommand { get; }
-        // MainViewModel.cs
+        public ICommand ResetFiltersCommand { get; }
 
-        private ObservableCollection<object> _groupedBooks;
-        public ObservableCollection<object> GroupedBooks
-        {
-            get => _groupedBooks;
-            set => SetProperty(ref _groupedBooks, value);
-        }
-
-        // Свойства для привязки.
-        private ObservableCollection<BookDto> _selectedBooks = new();
-        public ObservableCollection<BookDto> SelectedBooks
-        {
-            get => _selectedBooks;
-            set => SetProperty(ref _selectedBooks, value);
-        }
+        // Свойства
         public ObservableCollection<BookDto> Books
         {
             get => _books;
@@ -76,6 +55,12 @@ namespace BookLibrary.WPF.ViewModel
         {
             get => _selectedBook;
             set => SetProperty(ref _selectedBook, value);
+        }
+
+        public ObservableCollection<BookDto> SelectedBooks
+        {
+            get => _selectedBooks;
+            set => SetProperty(ref _selectedBooks, value);
         }
 
         public string InputTitle
@@ -102,29 +87,60 @@ namespace BookLibrary.WPF.ViewModel
             set => SetProperty(ref _inputRaiting, value);
         }
 
-        // Конструктор: инициализирует бизнес-логику, загружает книги, создаёт команды.
+        // Настройки экспорта
+        public bool IsJsonPretty
+        {
+            get => _isJsonPretty;
+            set => SetProperty(ref _isJsonPretty, value);
+        }
+
+        public bool IsIdChecked
+        {
+            get => _isIdChecked;
+            set => SetProperty(ref _isIdChecked, value);
+        }
+
+        public bool IsTitleChecked
+        {
+            get => _isTitleChecked;
+            set => SetProperty(ref _isTitleChecked, value);
+        }
+
+        public bool IsAuthorChecked
+        {
+            get => _isAuthorChecked;
+            set => SetProperty(ref _isAuthorChecked, value);
+        }
+
+        public bool IsGenreChecked
+        {
+            get => _isGenreChecked;
+            set => SetProperty(ref _isGenreChecked, value);
+        }
+
+        public bool IsRaitingChecked
+        {
+            get => _isRaitingChecked;
+            set => SetProperty(ref _isRaitingChecked, value);
+        }
+
         public MainViewModel()
         {
             var repository = new EntityRepository<Book>();
             _logic = new BookLogic(repository);
             LoadBooks();
 
+            // ИСПРАВЛЕННЫЕ КОМАНДЫ (без ошибок компиляции)
             AddBookCommand = new RelayCommand(AddBook);
-            DeleteBookCommand = new RelayCommand(() =>
-            {
-                if (SelectedBook != null)
-                    DeleteBook(SelectedBook.Id);
-            });
+            DeleteBookCommand = new RelayCommand(DeleteSelectedBook);
             UpdateBookCommand = new RelayCommand(UpdateBook);
-            FindByAuthorCommand = new RelayCommand(FindByAuthor);
             GroupByAuthorCommand = new RelayCommand(GroupByAuthor);
             FindFantasyBooksCommand = new RelayCommand(FindFantasyBooks);
-            
             ExportToCsvCommand = new RelayCommand(ExportToCsv);
             ExportToJsonCommand = new RelayCommand(ExportToJson);
+            ResetFiltersCommand = new RelayCommand(ResetFilters);
         }
 
-        // Загружает все книги из бизнес-логики и преобразует их в DTO.
         private void LoadBooks()
         {
             var models = _logic.GetAll();
@@ -132,10 +148,9 @@ namespace BookLibrary.WPF.ViewModel
             Books = new ObservableCollection<BookDto>(dtos);
         }
 
-        // Обработка нажатия "Добавить".
-        public void AddBook()
+        private void AddBook()
         {
-            // Валидация ввода.
+            // ... ваш существующий код добавления книги ...
             if (string.IsNullOrWhiteSpace(InputTitle))
             {
                 MessageBox.Show("Пожалуйста, укажите название книги.");
@@ -157,7 +172,6 @@ namespace BookLibrary.WPF.ViewModel
                 return;
             }
 
-            // Создаём DTO → преобразуем в модель → передаём в бизнес-логику.
             var newBook = new BookDto
             {
                 Title = InputTitle,
@@ -169,8 +183,7 @@ namespace BookLibrary.WPF.ViewModel
             var model = newBook.ToModel();
             if (_logic.Add(model.Title, model.Author, model.Genre, model.Raiting))
             {
-                LoadBooks(); // Обновляем список.
-                // Очищаем поля ввода.
+                LoadBooks();
                 InputTitle = InputAuthor = InputGenre = InputRaiting = "";
             }
             else
@@ -179,8 +192,15 @@ namespace BookLibrary.WPF.ViewModel
             }
         }
 
-        // Удаление книги по ID.
-        public void DeleteBook(int id)
+        private void DeleteSelectedBook()
+        {
+            if (SelectedBook != null)
+            {
+                DeleteBook(SelectedBook.Id);
+            }
+        }
+
+        private void DeleteBook(int id)
         {
             if (_logic.Delete(id))
             {
@@ -192,84 +212,41 @@ namespace BookLibrary.WPF.ViewModel
             }
         }
 
-        // Обновление выбранной книги.
-        public void UpdateBook()
+        private void UpdateBook()
         {
-            InputTitle = "";
-            InputAuthor = "";
-            InputGenre = "";
-            InputRaiting = "";
-            LoadBooks();
-        }
-
-        // Поиск по автору (использует InputAuthor).
-        public void FindByAuthor()
-        {
-            if (!string.IsNullOrWhiteSpace(InputAuthor))
-                FindByAuthor(InputAuthor);
-        }
-
-        // Перегрузка: поиск по заданной строке (вызывается из бизнес-логики).
-        public void FindByAuthor(string author)
-        {
-            var models = _logic.FindByAuthor(author);
-            var dtos = models.Select(BookDto.FromModel).ToList();
-            Books = new ObservableCollection<BookDto>(dtos);
-        }
-
-        // Группировка по автору (результат выводится в MessageBox).
-        public void GroupByAuthor()
-        {
-            var groups = _logic.GetAll()
-                .GroupBy(b => b.Author)
-                .OrderBy(g => g.Key)
-                .ToList();
-
-            GroupedBooks = new ObservableCollection<object>();
-
-            foreach (var group in groups)
+            if (SelectedBook == null)
             {
-                
-                GroupedBooks.Add(new GroupHeader
-                {
-                    Author = group.Key,
-                    BookCount = group.Count()
-                });
+                MessageBox.Show("Выберите книгу для обновления.");
+                return;
+            }
 
-                // Добавляем книги группы
-                foreach (var book in group)
-                {
-                    GroupedBooks.Add(BookDto.FromModel(book));
-                }
+            var model = SelectedBook.ToModel();
+            if (_logic.Update(model.Id, model.Title, model.Author, model.Genre, model.Raiting))
+            {
+                LoadBooks();
+            }
+            else
+            {
+                MessageBox.Show("Ошибка при обновлении книги.");
             }
         }
 
-        // Фильтр фэнтези-книг.
-        public void FindFantasyBooks()
+        private void GroupByAuthor()
+        {
+            // Пока просто показываем группировку в MessageBox
+            var grouped = _logic.GroupByAuthor();
+            MessageBox.Show(string.Join("\n", grouped), "Группировка по авторам");
+        }
+
+        private void FindFantasyBooks()
         {
             var models = _logic.FindFantasyBooks();
             var dtos = models.Select(BookDto.FromModel).ToList();
             Books = new ObservableCollection<BookDto>(dtos);
         }
 
-        // Поиск по рейтингу (использует InputRaiting).
-        public void FindRaitingBooks()
-        {
-            if (int.TryParse(InputRaiting, out int rating))
-                FindRaitingBooks(rating);
-        }
-
-        // Перегрузка: поиск по числу.
-        public void FindRaitingBooks(int raiting)
-        {
-            var models = _logic.FindRaitingBooks(raiting);
-            var dtos = models.Select(BookDto.FromModel).ToList();
-            Books = new ObservableCollection<BookDto>(dtos);
-        }
-        // Выгрузка в CSV
-        // В MainViewModel.cs (замените текущий метод)
-
-        public void ExportToCsv()
+        // ИСПРАВЛЕННЫЕ МЕТОДЫ ЭКСПОРТА (без параметров)
+        private void ExportToCsv()
         {
             var dialog = new Microsoft.Win32.SaveFileDialog
             {
@@ -277,50 +254,47 @@ namespace BookLibrary.WPF.ViewModel
                 FileName = "Books.csv"
             };
 
-            if (dialog.ShowDialog() == true)
+            if (dialog.ShowDialog() != true) return;
+
+            try
             {
-                try
+                var booksToExport = SelectedBooks?.Any() == true ? SelectedBooks : Books;
+                var bom = new byte[] { 0xEF, 0xBB, 0xBF };
+
+                using var fs = new FileStream(dialog.FileName, FileMode.Create);
+                fs.Write(bom, 0, bom.Length);
+                using var writer = new StreamWriter(fs, Encoding.UTF8);
+
+                // Заголовки
+                var headers = new List<string>();
+                if (IsIdChecked) headers.Add("ID");
+                if (IsTitleChecked) headers.Add("Название");
+                if (IsAuthorChecked) headers.Add("Автор");
+                if (IsGenreChecked) headers.Add("Жанр");
+                if (IsRaitingChecked) headers.Add("Рейтинг");
+                writer.WriteLine(string.Join(";", headers));
+
+                // Данные
+                foreach (var book in booksToExport)
                 {
-                    // Если есть выделенные книги - экспортируем их, иначе - все
-                    var booksToExport = SelectedBooks?.Any() == true
-                        ? SelectedBooks
-                        : Books;
-
-                    // BOM для кириллицы
-                    var bom = new byte[] { 0xEF, 0xBB, 0xBF };
-                    using var fs = new FileStream(dialog.FileName, FileMode.Create, FileAccess.Write);
-                    fs.Write(bom, 0, bom.Length);
-                    using var writer = new StreamWriter(fs, Encoding.UTF8);
-
-                    // Заголовки
-                    writer.WriteLine("ID;Название;Автор;Жанр;Рейтинг");
-
-                    // Данные
-                    foreach (var book in booksToExport)
-                    {
-                        string EscapeCsvField(string field) =>
-                            $"\"{field.Replace("\"", "\"\"").Replace(";", ",")}\"";
-
-                        writer.WriteLine(
-                            $"{book.Id};" +
-                            $"{EscapeCsvField(book.Title)};" +
-                            $"{EscapeCsvField(book.Author)};" +
-                            $"{EscapeCsvField(book.Genre)};" +
-                            $"{book.Raiting}"
-                        );
-                    }
-                    MessageBox.Show("Данные успешно выгружены в CSV!");
+                    var fields = new List<string>();
+                    if (IsIdChecked) fields.Add(book.Id.ToString());
+                    if (IsTitleChecked) fields.Add(EscapeCsv(book.Title));
+                    if (IsAuthorChecked) fields.Add(EscapeCsv(book.Author));
+                    if (IsGenreChecked) fields.Add(EscapeCsv(book.Genre));
+                    if (IsRaitingChecked) fields.Add(book.Raiting.ToString());
+                    writer.WriteLine(string.Join(";", fields));
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Ошибка при выгрузке в CSV:\n{ex.Message}");
-                }
+
+                MessageBox.Show("Данные успешно выгружены в CSV!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка при выгрузке в CSV:\n{ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
-        // Выгрузка в JSON
-        // Выгрузка в JSON (с поддержкой выделенных строк)
-        public void ExportToJson()
+        private void ExportToJson()
         {
             var dialog = new Microsoft.Win32.SaveFileDialog
             {
@@ -328,39 +302,48 @@ namespace BookLibrary.WPF.ViewModel
                 FileName = "Books.json"
             };
 
-            if (dialog.ShowDialog() == true)
+            if (dialog.ShowDialog() != true) return;
+
+            try
             {
-                try
+                var booksToExport = SelectedBooks?.Any() == true ? SelectedBooks : Books;
+
+                // Формируем данные с выбранными столбцами
+                var exportData = booksToExport.Select(b => new
                 {
-                    // Если есть выделенные книги - экспортируем их, иначе - все
-                    var booksToExport = SelectedBooks?.Any() == true
-                        ? SelectedBooks
-                        : Books;
+                    Id = IsIdChecked ? b.Id : (int?)null,
+                    Title = IsTitleChecked ? b.Title : null,
+                    Author = IsAuthorChecked ? b.Author : null,
+                    Genre = IsGenreChecked ? b.Genre : null,
+                    Raiting = IsRaitingChecked ? b.Raiting : (int?)null
+                }).ToList();
 
-                    // Преобразуем только нужные поля (без ViewModelBase-свойств)
-                    var exportData = booksToExport.Select(b => new
-                    {
-                        b.Id,
-                        b.Title,
-                        b.Author,
-                        b.Genre,
-                        b.Raiting
-                    }).ToList();
-
-                    string json = System.Text.Json.JsonSerializer.Serialize(exportData, new System.Text.Json.JsonSerializerOptions
-                    {
-                        WriteIndented = true,
-                        Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping
-                    });
-
-                    File.WriteAllText(dialog.FileName, json, Encoding.UTF8);
-                    MessageBox.Show("Данные успешно выгружены в JSON!");
-                }
-                catch (Exception ex)
+                var options = new System.Text.Json.JsonSerializerOptions
                 {
-                    MessageBox.Show($"Ошибка при выгрузке в JSON:\n{ex.Message}");
-                }
+                    WriteIndented = IsJsonPretty,
+                    Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+                };
+
+                string json = System.Text.Json.JsonSerializer.Serialize(exportData, options);
+                File.WriteAllText(dialog.FileName, json, Encoding.UTF8);
+                MessageBox.Show("Данные успешно выгружены в JSON!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка при выгрузке в JSON:\n{ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private string EscapeCsv(string value)
+        {
+            if (string.IsNullOrEmpty(value)) return "";
+            return $"\"{value.Replace("\"", "\"\"").Replace(";", ",")}\"";
+        }
+
+        private void ResetFilters()
+        {
+            InputTitle = InputAuthor = InputGenre = InputRaiting = "";
+            LoadBooks();
         }
     }
 }

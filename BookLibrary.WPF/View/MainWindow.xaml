@@ -3,46 +3,141 @@
 <Window x:Class="BookLibrary.WPF.View.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Библиотека книг" Height="600" Width="800">
-    <Grid>
+        Title="📚 Библиотека книг" Height="650" Width="900"
+        Background="#F0F4F8">
+
+    <Window.Resources>
+        <!-- Стиль для кнопок -->
+        <Style TargetType="Button">
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="Margin" Value="5,0,5,5"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                CornerRadius="5" 
+                                Padding="10,5">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Opacity" Value="0.9"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <!-- Стиль для TextBox с подсказкой -->
+        <Style TargetType="TextBox">
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Background" Value="#F8FAFF"/>
+            <Setter Property="Margin" Value="0,0,5,5"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="15">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="10"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
         <!-- Панель управления -->
-        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10">
-            <TextBox Text="{Binding InputTitle}" Width="150" Margin="5" ToolTip="Название книги"/>
-            <TextBox Text="{Binding InputAuthor}" Width="150" Margin="5" ToolTip="Автор книги"/>
-            <TextBox Text="{Binding InputGenre}" Width="150" Margin="5" ToolTip="Жанр книги"/>
-            <TextBox Text="{Binding InputRaiting}" Width="80" Margin="5" ToolTip="Рейтинг книги"/>
+        <Border Background="White" CornerRadius="10" Padding="15" 
+                BorderBrush="#D1D9E6" BorderThickness="1">
+            <StackPanel Orientation="Horizontal">
+                <TextBox Text="{Binding InputTitle}" Width="140" ToolTip="Название книги"/>
+                <TextBox Text="{Binding InputAuthor}" Width="140" ToolTip="Автор книги"/>
+                <TextBox Text="{Binding InputGenre}" Width="140" ToolTip="Жанр книги"/>
+                <TextBox Text="{Binding InputRaiting}" Width="80" ToolTip="Рейтинг книги"/>
 
-            <Button Content="Добавить" Command="{Binding AddBookCommand}" Margin="5"/>
-            <Button Content="Удалить" Command="{Binding DeleteBookCommand}" Margin="5"/>
-            <Button Content="Обновить" Command="{Binding UpdateBookCommand}" Margin="5"/>
-            <Button Content="Группировка" Command="{Binding GroupByAuthorCommand}" Margin="5"/>
-            <Button Content="Фэнтези" Command="{Binding FindFantasyBooksCommand}" Margin="5"/>
-            <Button Content="Выгрузить в CSV" Command="{Binding ExportToCsvCommand}" CommandParameter="{Binding ElementName=DataGridBooks, Path=SelectedItems}" Margin="5"/>
-            <Button Content="Выгрузить в JSON" Command="{Binding ExportToJsonCommand}" Margin="5"/>
-        </StackPanel>
+                <Button Content="✚ Добавить" Command="{Binding AddBookCommand}" 
+                        Background="#2E7D32" Height="30"/>
+                <Button Content="🗑 Удалить" Command="{Binding DeleteBookCommand}" 
+                        Background="#C62828" Height="30"/>
+                <Button Content="🔄 Обновить" Command="{Binding ResetFiltersCommand}" 
+                        Background="#1565C0" Height="30"/>
+                <Button Content="🧙 Фэнтези" Command="{Binding FindFantasyBooksCommand}" 
+                        Background="#6A1B9A" Height="30"/>
+            </StackPanel>
+        </Border>
 
         <!-- Таблица книг -->
-        <DataGrid Grid.Row="1" 
-                ItemsSource="{Binding Books}"
-                SelectedItem="{Binding SelectedBook}"
-                SelectionMode="Extended"
-                SelectionUnit="FullRow"
-                SelectionChanged="DataGridBooks_SelectionChanged"
-                AutoGenerateColumns="True"
-                Margin="10">
+        <Border Grid.Row="2" Background="White" CornerRadius="10" 
+                BorderBrush="#D1D9E6" BorderThickness="1" Padding="5">
+            <DataGrid x:Name="DataGridBooks"
+                      ItemsSource="{Binding Books}" 
+                      SelectedItem="{Binding SelectedBook}"
+                      SelectionMode="Extended"
+                      SelectionChanged="DataGridBooks_SelectionChanged"
+                      AutoGenerateColumns="False"
+                      CanUserAddRows="False"
+                      CanUserDeleteRows="False"
+                      Background="Transparent"
+                      RowHeight="35"
+                      BorderThickness="0">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="60" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Название" Binding="{Binding Title}" Width="*"/>
+                    <DataGridTextColumn Header="Автор" Binding="{Binding Author}" Width="150"/>
+                    <DataGridTextColumn Header="Жанр" Binding="{Binding Genre}" Width="100"/>
+                    <DataGridTextColumn Header="Рейтинг" Binding="{Binding Raiting}" Width="80"/>
+                </DataGrid.Columns>
+                <DataGrid.RowStyle>
+                    <Style TargetType="DataGridRow">
+                        <Setter Property="Background" Value="White"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#E3F2FD"/>
+                            </Trigger>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Background" Value="#BBDEFB"/>
+                                <Setter Property="BorderBrush" Value="#2196F3"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </DataGrid.RowStyle>
+            </DataGrid>
+        </Border>
 
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding Id}" IsReadOnly="True"/>
-                <DataGridTextColumn Header="Название" Binding="{Binding Title}"/>
-                <DataGridTextColumn Header="Автор" Binding="{Binding Author}"/>
-                <DataGridTextColumn Header="Жанр" Binding="{Binding Genre}"/>
-                <DataGridTextColumn Header="Рейтинг" Binding="{Binding Raiting}"/>
-            </DataGrid.Columns>
-        </DataGrid>
+        <!-- Настройки экспорта -->
+        <Border Grid.Row="4" Background="White" CornerRadius="10" 
+                BorderBrush="#D1D9E6" BorderThickness="1" Padding="15">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Выбор столбцов -->
+                <StackPanel>
+                    <TextBlock Text="Экспорт данных" FontSize="14" FontWeight="SemiBold" Foreground="#1A237E" Margin="0,0,0,10"/>
+                    <UniformGrid Columns="5" Margin="0,0,0,10">
+                        <CheckBox Content="ID" IsChecked="{Binding IsIdChecked}" Margin="0,0,10,0"/>
+                        <CheckBox Content="Название" IsChecked="{Binding IsTitleChecked}" Margin="0,0,10,0"/>
+                        <CheckBox Content="Автор" IsChecked="{Binding IsAuthorChecked}" Margin="0,0,10,0"/>
+                        <CheckBox Content="Жанр" IsChecked="{Binding IsGenreChecked}" Margin="0,0,10,0"/>
+                        <CheckBox Content="Рейтинг" IsChecked="{Binding IsRaitingChecked}" Margin="0,0,10,0"/>
+                    </UniformGrid>
+                </StackPanel>
+
+                <!-- Кнопки экспорта -->
+                <StackPanel Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top">
+                    <CheckBox Content="Красивый JSON" IsChecked="{Binding IsJsonPretty}" Margin="0,0,0,10"/>
+                    <Button Content="📥 Выгрузить в CSV" Command="{Binding ExportToCsvCommand}" 
+                            Background="#FF9800" Width="150" Height="35" Margin="0,0,0,5"/>
+                    <Button Content="📥 Выгрузить в JSON" Command="{Binding ExportToJsonCommand}" 
+                            Background="#9C27B0" Width="150" Height="35"/>
+                </StackPanel>
+            </Grid>
+        </Border>
     </Grid>
 </Window>

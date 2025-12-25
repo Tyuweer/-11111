@@ -1,12 +1,5 @@
-﻿// MainWindow.xaml.cs
-//
-// CodeBehind главного окна.
-// СОДЕРЖИТ ТОЛЬКО InitializeComponent() — это требование пункта 1 задания.
-// Вся логика вынесена в MainViewModel.
-// Никаких обработчиков Click, доступа к TextBox.Text и т.п.
+﻿// View/MainWindow.xaml.cs
 
-using BookLibrary.WPF.ViewModel;
-using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -16,16 +9,22 @@ namespace BookLibrary.WPF.View
     {
         public MainWindow()
         {
-            InitializeComponent(); // Обязательный вызов для загрузки XAML.
-            // DataContext будет установлен из ViewManager.
+            InitializeComponent();
         }
+
         private void DataGridBooks_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (DataContext is MainViewModel vm && sender is DataGrid grid)
+            if (DataContext is ViewModel.MainViewModel vm && sender is DataGrid grid)
             {
-                vm.SelectedBooks = new ObservableCollection<BookDto>(
-                    grid.SelectedItems.Cast<BookDto>()
-                );
+                var selectedItems = new System.Collections.ObjectModel.ObservableCollection<BookDto>();
+                foreach (var item in grid.SelectedItems)
+                {
+                    if (item is BookDto book)
+                    {
+                        selectedItems.Add(book);
+                    }
+                }
+                vm.SelectedBooks = selectedItems;
             }
         }
     }
