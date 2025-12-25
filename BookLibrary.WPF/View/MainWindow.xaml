@@ -20,18 +20,22 @@
             <Button Content="Добавить" Command="{Binding AddBookCommand}" Margin="5"/>
             <Button Content="Удалить" Command="{Binding DeleteBookCommand}" Margin="5"/>
             <Button Content="Обновить" Command="{Binding UpdateBookCommand}" Margin="5"/>
-            <Button Content="По автору" Command="{Binding FindByAuthorCommand}" Margin="5"/>
             <Button Content="Группировка" Command="{Binding GroupByAuthorCommand}" Margin="5"/>
             <Button Content="Фэнтези" Command="{Binding FindFantasyBooksCommand}" Margin="5"/>
-            <Button Content="По рейтингу" Command="{Binding FindRaitingBooksCommand}" Margin="5"/>
+            <Button Content="Выгрузить в CSV" Command="{Binding ExportToCsvCommand}" CommandParameter="{Binding ElementName=DataGridBooks, Path=SelectedItems}" Margin="5"/>
+            <Button Content="Выгрузить в JSON" Command="{Binding ExportToJsonCommand}" Margin="5"/>
         </StackPanel>
 
         <!-- Таблица книг -->
         <DataGrid Grid.Row="1" 
-                  ItemsSource="{Binding Books}"
-                  SelectedItem="{Binding SelectedBook}"
-                  AutoGenerateColumns="True"
-                  Margin="10">
+                ItemsSource="{Binding Books}"
+                SelectedItem="{Binding SelectedBook}"
+                SelectionMode="Extended"
+                SelectionUnit="FullRow"
+                SelectionChanged="DataGridBooks_SelectionChanged"
+                AutoGenerateColumns="True"
+                Margin="10">
+
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding Id}" IsReadOnly="True"/>
                 <DataGridTextColumn Header="Название" Binding="{Binding Title}"/>

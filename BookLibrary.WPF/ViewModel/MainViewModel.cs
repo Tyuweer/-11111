@@ -17,7 +17,9 @@ using DataAccessLayer;
 using DomainModels;
 using ModelLogic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
+using System.Text;
 using System.Windows;
 using System.Windows.Input;
 
@@ -46,9 +48,24 @@ namespace BookLibrary.WPF.ViewModel
         public ICommand FindByAuthorCommand { get; }
         public ICommand GroupByAuthorCommand { get; }
         public ICommand FindFantasyBooksCommand { get; }
-        public ICommand FindRaitingBooksCommand { get; }
+        public ICommand ExportToCsvCommand { get; }
+        public ICommand ExportToJsonCommand { get; }
+        // MainViewModel.cs
+
+        private ObservableCollection<object> _groupedBooks;
+        public ObservableCollection<object> GroupedBooks
+        {
+            get => _groupedBooks;
+            set => SetProperty(ref _groupedBooks, value);
+        }
 
         // Свойства для привязки.
+        private ObservableCollection<BookDto> _selectedBooks = new();
+        public ObservableCollection<BookDto> SelectedBooks
+        {
+            get => _selectedBooks;
+            set => SetProperty(ref _selectedBooks, value);
+        }
         public ObservableCollection<BookDto> Books
         {
             get => _books;
@@ -102,7 +119,9 @@ namespace BookLibrary.WPF.ViewModel
             FindByAuthorCommand = new RelayCommand(FindByAuthor);
             GroupByAuthorCommand = new RelayCommand(GroupByAuthor);
             FindFantasyBooksCommand = new RelayCommand(FindFantasyBooks);
-            FindRaitingBooksCommand = new RelayCommand(FindRaitingBooks);
+            
+            ExportToCsvCommand = new RelayCommand(ExportToCsv);
+            ExportToJsonCommand = new RelayCommand(ExportToJson);
         }
 
         // Загружает все книги из бизнес-логики и преобразует их в DTO.
@@ -176,21 +195,11 @@ namespace BookLibrary.WPF.ViewModel
         // Обновление выбранной книги.
         public void UpdateBook()
         {
-            if (SelectedBook == null)
-            {
-                MessageBox.Show("Выберите книгу для обновления.");
-                return;
-            }
-
-            var model = SelectedBook.ToModel();
-            if (_logic.Update(model.Id, model.Title, model.Author, model.Genre, model.Raiting))
-            {
-                LoadBooks();
-            }
-            else
-            {
-                MessageBox.Show("Ошибка при обновлении книги.");
-            }
+            InputTitle = "";
+            InputAuthor = "";
+            InputGenre = "";
+            InputRaiting = "";
+            LoadBooks();
         }
 
         // Поиск по автору (использует InputAuthor).
@@ -211,8 +220,28 @@ namespace BookLibrary.WPF.ViewModel
         // Группировка по автору (результат выводится в MessageBox).
         public void GroupByAuthor()
         {
-            var grouped = _logic.GroupByAuthor();
-            MessageBox.Show(string.Join("\n", grouped));
+            var groups = _logic.GetAll()
+                .GroupBy(b => b.Author)
+                .OrderBy(g => g.Key)
+                .ToList();
+
+            GroupedBooks = new ObservableCollection<object>();
+
+            foreach (var group in groups)
+            {
+                
+                GroupedBooks.Add(new GroupHeader
+                {
+                    Author = group.Key,
+                    BookCount = group.Count()
+                });
+
+                // Добавляем книги группы
+                foreach (var book in group)
+                {
+                    GroupedBooks.Add(BookDto.FromModel(book));
+                }
+            }
         }
 
         // Фильтр фэнтези-книг.
@@ -236,6 +265,102 @@ namespace BookLibrary.WPF.ViewModel
             var models = _logic.FindRaitingBooks(raiting);
             var dtos = models.Select(BookDto.FromModel).ToList();
             Books = new ObservableCollection<BookDto>(dtos);
+        }
+        // Выгрузка в CSV
+        // В MainViewModel.cs (замените текущий метод)
+
+        public void ExportToCsv()
+        {
+            var dialog = new Microsoft.Win32.SaveFileDialog
+            {
+                Filter = "CSV файлы (*.csv)|*.csv|Все файлы (*.*)|*.*",
+                FileName = "Books.csv"
+            };
+
+            if (dialog.ShowDialog() == true)
+            {
+                try
+                {
+                    // Если есть выделенные книги - экспортируем их, иначе - все
+                    var booksToExport = SelectedBooks?.Any() == true
+                        ? SelectedBooks
+                        : Books;
+
+                    // BOM для кириллицы
+                    var bom = new byte[] { 0xEF, 0xBB, 0xBF };
+                    using var fs = new FileStream(dialog.FileName, FileMode.Create, FileAccess.Write);
+                    fs.Write(bom, 0, bom.Length);
+                    using var writer = new StreamWriter(fs, Encoding.UTF8);
+
+                    // Заголовки
+                    writer.WriteLine("ID;Название;Автор;Жанр;Рейтинг");
+
+                    // Данные
+                    foreach (var book in booksToExport)
+                    {
+                        string EscapeCsvField(string field) =>
+                            $"\"{field.Replace("\"", "\"\"").Replace(";", ",")}\"";
+
+                        writer.WriteLine(
+                            $"{book.Id};" +
+                            $"{EscapeCsvField(book.Title)};" +
+                            $"{EscapeCsvField(book.Author)};" +
+                            $"{EscapeCsvField(book.Genre)};" +
+                            $"{book.Raiting}"
+                        );
+                    }
+                    MessageBox.Show("Данные успешно выгружены в CSV!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка при выгрузке в CSV:\n{ex.Message}");
+                }
+            }
+        }
+
+        // Выгрузка в JSON
+        // Выгрузка в JSON (с поддержкой выделенных строк)
+        public void ExportToJson()
+        {
+            var dialog = new Microsoft.Win32.SaveFileDialog
+            {
+                Filter = "JSON файлы (*.json)|*.json|Все файлы (*.*)|*.*",
+                FileName = "Books.json"
+            };
+
+            if (dialog.ShowDialog() == true)
+            {
+                try
+                {
+                    // Если есть выделенные книги - экспортируем их, иначе - все
+                    var booksToExport = SelectedBooks?.Any() == true
+                        ? SelectedBooks
+                        : Books;
+
+                    // Преобразуем только нужные поля (без ViewModelBase-свойств)
+                    var exportData = booksToExport.Select(b => new
+                    {
+                        b.Id,
+                        b.Title,
+                        b.Author,
+                        b.Genre,
+                        b.Raiting
+                    }).ToList();
+
+                    string json = System.Text.Json.JsonSerializer.Serialize(exportData, new System.Text.Json.JsonSerializerOptions
+                    {
+                        WriteIndented = true,
+                        Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+                    });
+
+                    File.WriteAllText(dialog.FileName, json, Encoding.UTF8);
+                    MessageBox.Show("Данные успешно выгружены в JSON!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка при выгрузке в JSON:\n{ex.Message}");
+                }
+            }
         }
     }
 }
